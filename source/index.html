@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: {{projectTitle}}</title>
-  </head>
-  <body>
+<html class="page" lang="ru">
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS. Адаптивная вёрстка и автоматизация</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Cake Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  </body>
+<body class="page__body">
+  <div class="page__wrapper">
+    <header class="page__header">
+      <div class="container">
+        <div class="header">
+          <a class="header__logo | logo" href="#">
+            <img class="logo__image" width="80" height="80" src="img/ncs-logo.jpg" alt="Логотип Neon Cake Studio.">
+          </a>
+          <nav class="header__navigation | navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Студия</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Видео</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Фото</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#" class="navigation__link">Coub's</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="page__main main">
+      <div class="intro">
+        <div class="intro__inner-wrapper">
+          <h1 class="intro__title">Neon Cake Studio</h1>
+        </div>
+        <video class="intro__video" autoplay muted loop>
+          <source src="img/werewolf-dance.mp4">
+        </video>
+      </div>
+      <div class="main__content main__content--wrapper">
+        <section class="about | container">
+          <div class="about__text-block text-block">
+            <h2 class="text-block__title">О студии</h2>
+            <p class="text-block__text">Студия Неоновый Куличик - это творческий коллектив из Москвы, состоящий из
+              нескольких постоянных участников - Егора Макеева и Сергея Лисицына (и иногда Алексея Жучкова). Мы
+              предоставляем высококачественный юмористический контент, любим высмеивать себя и других и не несем никакой
+              ответственности за свое великолепное чувство юмора.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page__footer">
+    </footer>
+  </div>
+</body>
+
 </html>

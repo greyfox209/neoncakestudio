@@ -1,0 +1,10 @@
+.navigation__list {
+  display: flex;
+  gap: clamp(1rem, 5vw, 3rem);
+}
+
+.navigation__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f2eee3;
+}

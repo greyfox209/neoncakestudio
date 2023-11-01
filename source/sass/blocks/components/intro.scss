@@ -1,0 +1,42 @@
+.intro {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  //top: 0;
+  // left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.intro__inner-wrapper {
+  align-self: center;
+  position: relative;
+}
+
+.intro__title {
+  position: relative;
+  font-size: 7rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.intro__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.intro::before {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 1;
+}

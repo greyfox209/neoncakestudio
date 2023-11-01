@@ -1,1 +1,18 @@
-// Начните писать стили здесь
+//Global
+
+@import "global/global.scss";
+
+//Layouts:
+
+@import "blocks/layouts/page.scss";
+@import "blocks/layouts/container.scss";
+@import "blocks/layouts/header.scss";
+@import "blocks/layouts/about.scss";
+@import "blocks/layouts/main.scss";
+
+//Components
+
+@import "blocks/components/navigation.scss";
+@import "blocks/components/logo.scss";
+@import "blocks/components/intro.scss";
+@import "blocks/components/text-block.scss";

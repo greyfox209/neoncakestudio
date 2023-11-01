@@ -1,0 +1,23 @@
+.page {
+  height: 100%;
+  font-family: "Arial";
+  font-size: 1rem;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+.page__body {
+  height: 100%;
+  margin: 0;
+  color: #f2eee3;
+  background-color: #191313;
+}
+
+.page__wrapper {
+  position: relative;
+}
+
+.page__header {
+  position: relative;
+  z-index: 10;
+}
