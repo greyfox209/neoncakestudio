@@ -1,0 +1,27 @@
+.videos__title {
+  margin-bottom: 6rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.videos__item {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.videos__item--even .videos__content {
+  order: -1;
+}
+
+.videos__card {
+  height: 50vh;
+  background-color: black;
+}
+
+.videos__content {
+  height: 50vh;
+  background-color: palevioletred;
+}

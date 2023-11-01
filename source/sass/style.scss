@@ -4,15 +4,20 @@
 
 //Layouts:
 
-@import "blocks/layouts/page.scss";
-@import "blocks/layouts/container.scss";
-@import "blocks/layouts/header.scss";
-@import "blocks/layouts/about.scss";
-@import "blocks/layouts/main.scss";
+@import "layouts/page.scss";
+@import "layouts/container.scss";
+@import "layouts/main.scss";
+
+// Blocks
+
+@import "blocks/header.scss";
+@import "blocks/about.scss";
+@import "blocks/intro.scss";
+@import "blocks/information.scss";
+@import "blocks/team.scss";
+@import "blocks/videos.scss";
 
 //Components
 
-@import "blocks/components/navigation.scss";
-@import "blocks/components/logo.scss";
-@import "blocks/components/intro.scss";
-@import "blocks/components/text-block.scss";
+@import "components/navigation.scss";
+@import "components/logo.scss";
