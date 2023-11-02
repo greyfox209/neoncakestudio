@@ -23,6 +23,19 @@ const styles = () => {
 
 exports.styles = styles;
 
+/*
+//Scripts
+
+const scripts = () => {
+  return gulp.src("source/js/*.js")
+    .pipe(terser())
+    .pipe(gulp.dest("source/js"))
+    .pipe(sync.stream());
+};
+
+exports.scripts = scripts;
+*/
+
 // Server
 
 const server = (done) => {

@@ -46,7 +46,7 @@
         </video>
       </div>
       <div class="main__content main__content--wrapper">
-        <section class="main__ about about | container">
+        <section class="main__about about | container">
           <div class="about__information information">
             <h2 class="information__title">О студии</h2>
             <p class="information__text">Студия Неоновый Куличик - это творческий коллектив из Москвы, состоящий из
@@ -85,6 +85,33 @@
               <div class="videos__content"></div>
             </li>
           </ul>
+          <div class="videos__text-block">
+            <p class="videos__hook-text">Остальные работы на нашем канале</p>
+            <button class="videos__button | button">Посмотреть</button>
+          </div>
+        </section>
+        <section class="main__gallery gallery">
+          <div id="flick" class="flicking-viewport">
+            <div class="flicking-camera">
+              <div className="grid-panel has-background-primary has-text-white">1</div>
+              <div id="grid1" className="grid-panel">
+                <div class="has-background-warning has-text-dark">2</div>
+                <div class="has-background-danger has-text-white">3</div>
+                <div class="has-background-info has-text-white">4</div>
+                <div class="has-background-success has-text-white">5</div>
+                <div class="has-background-grey has-text-white">6</div>
+              </div>
+              <div className="grid-panel has-background-grey-darker has-text-white">7</div>
+              <div id="grid2" className="grid-panel">
+                <div class="has-background-light has-text-dark ">8</div>
+                <div class="has-background-grey has-text-white">9</div>
+                <div class="has-background-info has-text-white">10</div>
+                <div class="has-background-success has-text-white">11</div>
+                <div class="has-background-warning has-text-dark">12</div>
+                <div class="has-background-danger has-text-white">13</div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </main>
@@ -92,6 +119,9 @@
     <footer class="page__footer">
     </footer>
   </div>
+
+  <script src="https://naver.github.io/egjs-grid/release/latest/dist/grid.min.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 
 </html>
