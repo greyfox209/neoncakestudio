@@ -1,0 +1,26 @@
+.gallery--wrapper {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 4rem;
+}
+
+.gallery__title {
+  font-size: 5rem;
+  margin-bottom: 15rem;
+}
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.gallery__image {
+  width: 18rem;
+  height: 18rem;
+  background-color: pink;
+}

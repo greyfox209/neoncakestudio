@@ -4,6 +4,7 @@ const sourcemap = require("gulp-sourcemaps");
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
+// const terser = require("gulp-terser");
 const sync = require("browser-sync").create();
 
 // Styles
@@ -26,7 +27,7 @@ exports.styles = styles;
 /*
 //Scripts
 
-const scripts = () => {
+const scripts = (done) => {
   return gulp.src("source/js/*.js")
     .pipe(terser())
     .pipe(gulp.dest("source/js"))
@@ -56,6 +57,7 @@ exports.server = server;
 
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
+//  gulp.watch("source/js/*.js", gulp.series(scripts));
   gulp.watch("source/*.html").on("change", sync.reload);
 }
 

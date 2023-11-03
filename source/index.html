@@ -25,10 +25,10 @@
                 <a href="#" class="navigation__link">Видео</a>
               </li>
               <li class="navigation__item">
-                <a href="#" class="navigation__link">Фото</a>
+                <a href="#" class="navigation__link">Coub's</a>
               </li>
               <li class="navigation__item">
-                <a href="#" class="navigation__link">Coub's</a>
+                <a href="#" class="navigation__link">Фото</a>
               </li>
             </ul>
           </nav>
@@ -46,7 +46,7 @@
         </video>
       </div>
       <div class="main__content main__content--wrapper">
-        <section class="main__about about | container">
+        <section class="main__about about about-wrapper | container">
           <div class="about__information information">
             <h2 class="information__title">О студии</h2>
             <p class="information__text">Студия Неоновый Куличик - это творческий коллектив из Москвы, состоящий из
@@ -69,7 +69,7 @@
             </ul>
           </div>
         </section>
-        <section class="main__videos videos">
+        <section class="main__videos videos videos--wrapper">
           <h2 class="videos__title | container">Наши работы</h2>
           <ul class="videos__list">
             <li class="videos__item">
@@ -85,32 +85,59 @@
               <div class="videos__content"></div>
             </li>
           </ul>
-          <div class="videos__text-block">
-            <p class="videos__hook-text">Остальные работы на нашем канале</p>
-            <button class="videos__button | button">Посмотреть</button>
+          <div class="videos__text-block--wrapper">
+            <div class="videos__text-block">
+              <p class="videos__hook-text">Остальные работы на нашем канале</p>
+              <button class="videos__button | button">Посмотреть</button>
+            </div>
           </div>
         </section>
-        <section class="main__gallery gallery">
-          <div id="flick" class="flicking-viewport">
-            <div class="flicking-camera">
-              <div className="grid-panel has-background-primary has-text-white">1</div>
-              <div id="grid1" className="grid-panel">
-                <div class="has-background-warning has-text-dark">2</div>
-                <div class="has-background-danger has-text-white">3</div>
-                <div class="has-background-info has-text-white">4</div>
-                <div class="has-background-success has-text-white">5</div>
-                <div class="has-background-grey has-text-white">6</div>
-              </div>
-              <div className="grid-panel has-background-grey-darker has-text-white">7</div>
-              <div id="grid2" className="grid-panel">
-                <div class="has-background-light has-text-dark ">8</div>
-                <div class="has-background-grey has-text-white">9</div>
-                <div class="has-background-info has-text-white">10</div>
-                <div class="has-background-success has-text-white">11</div>
-                <div class="has-background-warning has-text-dark">12</div>
-                <div class="has-background-danger has-text-white">13</div>
-              </div>
-            </div>
+        <section class="main__coubs coubs coubs--wrapper">
+          <div class="coubs__title-block">
+            <h2 class="coubs__title">Наши <br>Coub'ы</h2>
+          </div>
+          <div class="coubs__text-block">
+            <p class="coubs__text">Другие coub'ы можете <br>увидеть на нашем канале</p>
+            <button class="coubs__button | button">Посмотреть</button>
+          </div>
+          <div class="coubs__content-block">
+            <ul class="coubs__list">
+              <li class="coubs__item">
+                <img class="coubs__image" src="#" alt="">
+                <p class="coubs__video-title">Название видео</p>
+              </li>
+              <li class="coubs__item">
+                <img class="coubs__image" src="#" alt="">
+                <p class="coubs__video-title">Название видео</p>
+              </li>
+              <li class="coubs__item">
+                <img class="coubs__image" src="#" alt="">
+                <p class="coubs__video-title">Название видео</p>
+              </li>
+              <li class="coubs_item">
+                <img class="coubs__image" src="#" alt="">
+                <p class="coubs__video-title">Название видео</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="main__gallery gallery | container">
+          <div class="gallery--wrapper">
+            <h2 class="gallery__title">Фото</h2>
+            <ul class="gallery__list">
+              <li class="gallery__item">
+                <img class="gallery__image" src="#" alt="">
+              </li>
+              <li class="gallery__item">
+                <img class="gallery__image" src="#" alt="">
+              </li>
+              <li class="gallery__item">
+                <img class="gallery__image" src="#" alt="">
+              </li>
+              <li class="gallery__item">
+                <img class="gallery__image" src="#" alt="">
+              </li>
+            </ul>
           </div>
         </section>
       </div>
@@ -120,8 +147,6 @@
     </footer>
   </div>
 
-  <script src="https://naver.github.io/egjs-grid/release/latest/dist/grid.min.js"></script>
-  <script src="js/carousel.js"></script>
 </body>
 
 </html>

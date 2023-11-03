@@ -3,6 +3,7 @@
   "private": true,
   "description": "Private project «Neon Cake Studio» by Sergey Lisitsyn",
   "devDependencies": {
+    "@egjs/grid": "^1.14.2",
     "@htmlacademy/editorconfig-cli": "^2.0.5",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
@@ -11,6 +12,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
     "postcss": "^8.4.31",
     "sass": "^1.69.4",
     "stylelint": "^15.11.0",
