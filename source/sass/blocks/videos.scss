@@ -1,16 +1,8 @@
-.videos--wrapper {
-  margin-bottom: 4rem;
-}
-
 .videos__title {
   margin-bottom: 6rem;
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-}
-
-.videos__list {
-  margin-bottom: 10rem;
 }
 
 .videos__item {
@@ -31,14 +23,15 @@
 
 .videos__content {
   height: 50vh;
-  background-color: pink;
+  background-color: #66FCF1;
 }
 
 .videos__text-block--wrapper {
-  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .videos__text-block {
