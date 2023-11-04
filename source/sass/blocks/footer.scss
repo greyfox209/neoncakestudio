@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer__text {
+  font-size: 2rem;
+  text-transform: uppercase;
+}

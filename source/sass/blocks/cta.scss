@@ -1,0 +1,18 @@
+.cta--wrapper {
+  padding-top: 14rem;
+  padding-bottom: 14rem;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0B0C10;
+}
+
+.cta__text {
+  max-width: 50rem;
+  font-size: 2rem;
+}
