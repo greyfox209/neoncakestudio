@@ -24,4 +24,11 @@
 .page__header {
   position: relative;
   z-index: 10;
+  padding-top: 3rem;
+}
+
+@media (max-width: $tablet-width) {
+  .page__header {
+    padding-top: 2rem;
+  }
 }
