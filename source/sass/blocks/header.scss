@@ -45,38 +45,14 @@
     display: block;
   }
 
-  /*
   .header__toggle {
     display: block;
     position: fixed;
-    top: 3.5rem;
+    top: 2.5rem;
     right: 4rem;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    padding: 0.5em;
-    width: 4rem;
-    aspect-ratio: 1;
-
-    background-image: url("../media/img/icon-hamburger.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .header__toggle[aria-expanded="true"] {
-    background-image: url("../media/img/icon-close.svg");
-  }
-  */
-
-  .header__toggle {
-    display: block;
-    position: fixed;
-    top: 3.5rem;
-    right: 4rem;
-    width: 50px;
-    height: 50px;
-    border: 2px solid blueviolet;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
     border-radius: 10px;
     background: transparent;
     z-index: 10;
@@ -99,7 +75,7 @@
     border-top: 4px solid;
     border-bottom: 4px solid;
 
-    color: blueviolet;
+    color: #ffffff;
     font-size: 0;
 
     transition: all .25s ease-in-out;
