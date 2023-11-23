@@ -25,6 +25,12 @@
   position: relative;
   z-index: 10;
   padding-top: 3rem;
+
+  transition: transform 0.2s;
+}
+
+.page__header--hidden {
+  transform: translateY(-90px);
 }
 
 @media (max-width: $tablet-width) {
