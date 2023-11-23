@@ -13,8 +13,43 @@ headerToggle.addEventListener('click', () => {
     pageHeader.toggleAttribute('data-overlay');
 });
 
+// intersection observer
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      pageHeader.classList.toggle('page__header--hidden', entry.isIntersecting)
+      headerToggle.classList.toggle('header__toggle--show', entry.isIntersecting)
+    })
+  },
+  {
+    rootMargin: '102px',
+  }
+)
+
+const hideHeader = document.querySelector('.main__content');
+observer.observe(hideHeader);
+
+/*
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('page__body--color-test');
+    } else {
+      entry.target.classList.remove('page__body--color-test');
+    }
+  });
+}, options);
+
+const hideHeader = document.querySelector('.main__content');
+observer.observe(hideHeader);
+*/
+
+
 // hide header on scroll
 
+/*
 let lastScrollY = window.scrollY;
 
 function isElementInViewport(el) {
@@ -42,22 +77,4 @@ window.addEventListener('scroll', () => {
 
   lastScrollY = window.scrollY;
 });
-
-
-
-
-/*
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-  if (lastScrollY < window.scrollY) {
-    pageHeader.classList.add('page__header--hidden'),
-    headerToggle.classList.add('header__toggle--show');
-  } else {
-    pageHeader.classList.remove('page__header--hidden');
-  }
-
-  lastScrollY = window.scrollY;
-});
 */
-
