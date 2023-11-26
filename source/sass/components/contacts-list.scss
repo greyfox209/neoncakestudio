@@ -1,11 +1,9 @@
 .contacts-list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  max-width: 4rem;
+  gap: 1rem;
 }
 
 .contacts-list__item {
-  margin: 0 0.5rem;
+  width: 4rem;
+  height: 4rem;
 }
