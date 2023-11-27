@@ -1,6 +1,6 @@
 const header = document.querySelector('.header__block');
-const headerToggle = document.querySelector('.header__toggle');
-const headerModal = document.querySelector('.header__modal--wrapper');
+const headerToggle = document.querySelector('.header__sidebar-toggle');
+const headerModal = document.querySelector('.header__sidebar--wrapper');
 
 // intersection observer for header
 
@@ -15,8 +15,8 @@ const observer = new IntersectionObserver(
         header.classList.add('header__block--visible');
       }
 
-      if (!headerModal.classList.contains('header__modal--opened')) {
-        headerToggle.classList.toggle('header__toggle--show', entry.isIntersecting);
+      if (!headerModal.classList.contains('header__sidebar--opened')) {
+        headerToggle.classList.toggle('header__sidebar-toggle--show', entry.isIntersecting);
       }
     });
   },
@@ -31,10 +31,10 @@ observer.observe(hideHeader);
 // header modal toggle
 
 headerToggle.addEventListener('click', () => {
-  headerModal.classList.toggle('header__modal--opened');
-  headerToggle.classList.add('header__toggle--show');
+  headerModal.classList.toggle('header__sidebar--opened');
+  headerToggle.classList.add('header__sidebar-toggle--show');
   if (header.classList.contains('header__block--visible')) {
-    headerToggle.classList.remove('header__toggle--show');
+    headerToggle.classList.remove('header__sidebar-toggle--show');
   }
 });
 
