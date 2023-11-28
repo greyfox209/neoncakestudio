@@ -1,1 +1,9 @@
+.logo__image:hover {
+  transition: all 0.2s ease-out;
+  opacity: 0.8;
+}
 
+.logo__image:focus,
+.logo__image:active {
+  opacity: 0.5;
+}

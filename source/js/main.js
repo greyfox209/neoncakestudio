@@ -1,6 +1,6 @@
 const header = document.querySelector('.header__block');
-const headerToggle = document.querySelector('.header__sidebar-toggle');
-const headerModal = document.querySelector('.header__sidebar--wrapper');
+const headerToggle = document.querySelector('.sidebar__toggle');
+const headerModal = document.querySelector('.sidebar__wrapper');
 
 // intersection observer for header
 
@@ -15,8 +15,8 @@ const observer = new IntersectionObserver(
         header.classList.add('header__block--visible');
       }
 
-      if (!headerModal.classList.contains('header__sidebar--opened')) {
-        headerToggle.classList.toggle('header__sidebar-toggle--show', entry.isIntersecting);
+      if (!headerModal.classList.contains('sidebar--opened')) {
+        headerToggle.classList.toggle('sidebar__toggle--show', entry.isIntersecting);
       }
     });
   },
@@ -31,10 +31,10 @@ observer.observe(hideHeader);
 // header modal toggle
 
 headerToggle.addEventListener('click', () => {
-  headerModal.classList.toggle('header__sidebar--opened');
-  headerToggle.classList.add('header__sidebar-toggle--show');
+  headerModal.classList.toggle('sidebar--opened');
+  headerToggle.classList.add('sidebar__toggle--show');
   if (header.classList.contains('header__block--visible')) {
-    headerToggle.classList.remove('header__sidebar-toggle--show');
+    headerToggle.classList.remove('sidebar__toggle--show');
   }
 });
 

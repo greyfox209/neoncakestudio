@@ -1,9 +1,43 @@
 .contacts-list {
   display: flex;
-  gap: 1rem;
+  align-items: center;
 }
 
 .contacts-list__item {
-  width: 4rem;
-  height: 4rem;
+  width: 80px;
+  height: 80px;
+}
+
+.contacts-list__icon {
+  width: 80px;
+  height: 80px;
+  transition: all 0.2s ease-out;
+}
+
+.contacts-list__icon:hover {
+  width: 90px;
+  height: 90px;
+}
+
+.contacts-list__icon:focus,
+.contacts-list__icon:active {
+  width: 90px;
+  height: 90px;
+}
+
+.contacts-list__icon path {
+  transition: all 0.2s ease-out;
+  fill: #f2eee3;
+}
+
+.contacts-list__icon:hover path {
+  fill: #7aebfb;
+  filter: drop-shadow(0 0 4px #7aebfb);
+}
+
+.contacts-list__icon:focus path,
+.contacts-list__icon:active path {
+  opacity: 0.8;
+  fill: #ffa1ff;
+  filter: drop-shadow(0 0 4px #ffa1ff);
 }
