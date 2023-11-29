@@ -3,11 +3,8 @@
   padding-top: 5rem;
   width: 100%;
 
-//  --max-width: 1400px;
-
-//  width: min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
-  background-color: #0B0C10;
+  background-color: $bg-second;
 }
 
 .coubs__title-block {
@@ -40,7 +37,7 @@
 .coubs__image {
   width: 400px;
   height: 220px;
-  background-color: #66FCF1;
+  background-color: $blue;
 }
 
 .coubs__text-block {

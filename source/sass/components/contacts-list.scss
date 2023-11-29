@@ -27,17 +27,17 @@
 
 .contacts-list__icon path {
   transition: all 0.2s ease-out;
-  fill: #f2eee3;
+  fill: $white;
 }
 
 .contacts-list__icon:hover path {
-  fill: #7aebfb;
-  filter: drop-shadow(0 0 4px #7aebfb);
+  fill: $blue;
+  filter: drop-shadow(0 0 4px $blue);
 }
 
 .contacts-list__icon:focus path,
 .contacts-list__icon:active path {
   opacity: 0.8;
-  fill: #ffa1ff;
-  filter: drop-shadow(0 0 4px #ffa1ff);
+  fill: $pink;
+  filter: drop-shadow(0 0 4px $pink);
 }

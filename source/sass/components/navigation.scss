@@ -11,7 +11,7 @@
 .navigation__link {
   text-decoration: none;
   text-transform: uppercase;
-  color: #f2eee3;
+  color: $white;
 
   transition: all 0.1s ease-out;
 }
@@ -22,13 +22,13 @@
 }
 
 .navigation__link:hover {
-  color: #7aebfb;
-  text-shadow: #7aebfb 0px 0px 40px;
+  color: $blue;
+  text-shadow: $blue 0px 0px 40px;
 }
 
 .navigation__link:active {
   opacity: 0.8;
-  color: #ffa1ff;
-  text-shadow: #ffa1ff 0px 0px 40px;
+  color: $pink;
+  text-shadow: $pink 0px 0px 40px;
 
 }

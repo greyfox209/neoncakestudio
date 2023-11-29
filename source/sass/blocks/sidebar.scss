@@ -12,8 +12,8 @@
   padding-right: 5rem;
   padding-left: 5rem;
 
-  background: rgba(11, 14, 14, 0.8);
-  box-shadow: 0 8px 32px 0 rgba(255, 119, 202, 0.37);
+  background: $bg-glass-effect;
+  box-shadow: 0 8px 32px 0 $pink-box-shadow;
   backdrop-filter: blur(16.5px);
   -webkit-backdrop-filter: blur(16.5px);
 
@@ -36,23 +36,23 @@
 .sidebar__navigation-link {
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $white;
 
   transition: all 0.2s ease-out;
 }
 
 .sidebar__navigation-link:hover {
   padding-left: 1rem;
-  color: #7aebfb;
-  text-shadow: #80F2FF 0px 0px 40px;
+  color: $blue;
+  text-shadow: $blue 0px 0px 40px;
 }
 
 .sidebar__navigation-link:focus,
 .sidebar__navigation-link:active {
   padding-left: 1rem;
   opacity: 0.8;
-  color: #ffa1ff;
-  text-shadow: #ffa1ff 0px 0px 40px;
+  color: $pink;
+  text-shadow: $pink 0px 0px 40px;
 }
 
 .sidebar__toggle {
@@ -61,7 +61,7 @@
   right: 4rem;
   width: 60px;
   height: 60px;
-  border: 2px solid #ffffff;
+  border: 2px solid $white;
   border-radius: 10px;
   background: transparent;
   z-index: 10;
@@ -77,7 +77,7 @@
   height: 64px;
   top: 2.3rem;
   right: 3.8rem;
-  box-shadow: #7aebfb 0px 0px 40px;
+  box-shadow: $blue 0px 0px 40px;
   transition: all 0.1s ease-out;
 }
 
@@ -86,7 +86,7 @@
   height: 64px;
   top: 2.3rem;
   right: 3.8rem;
-  box-shadow: #ffa1ff 0px 0px 40px;
+  box-shadow: $pink 0px 0px 40px;
   transition: all 0.1s ease-out;
 }
 
@@ -109,7 +109,7 @@
   border-top: 4px solid;
   border-bottom: 4px solid;
 
-  color: #ffffff;
+  color: $white;
   font-size: 0;
 
   transition: all .25s ease-in-out;

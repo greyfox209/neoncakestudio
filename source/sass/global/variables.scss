@@ -12,15 +12,11 @@ $mobile-width: 47em;
 
 // colors
 
-$pink: rgba(255, 119, 202, 0.9);
-$blue: #7aebfb;
-
-$pink-100: #ffa1ff;
-
-
-$text: rgb(255, 255, 255);
-$background: rgb(18, 18, 18);
-$primary: rgb(255, 150, 255);
-$secondary: rgb(21,22,24);
-$accent: rgb(128, 242, 255);
+$white: rgba(255, 255, 255, 1);
+$bg-main: rgba(18, 18, 18, 1);
+$bg-glass-effect: rgba(18, 18, 18, 0.8);
+$bg-second: rgba(21, 22, 24, 1);
+$pink: rgba(255, 150, 255, 1);
+$pink-box-shadow: rgba(255, 150, 255, 0.6);
+$blue: rgba(128, 242, 255, 1);
 

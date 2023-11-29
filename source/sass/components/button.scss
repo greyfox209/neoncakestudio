@@ -1,3 +1,29 @@
 .button {
   width: 24rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: 2px solid $pink;
+  border-radius: 10px;
+  color: $pink;
+  text-transform: uppercase;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  cursor: pointer;
+
+  box-shadow: $pink 0px 0px 30px;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover {
+  background-color: $pink;
+  color: $white;
+  box-shadow: $pink 0px 0px 40px;
+}
+
+.button:active {
+  background-color: $pink;
+  color: $white;
+  box-shadow: $pink 0px 0px 40px;
+  opacity: 0.4;
 }
