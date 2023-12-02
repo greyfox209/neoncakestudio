@@ -2,8 +2,6 @@ const header = document.querySelector('.header__block');
 const headerToggle = document.querySelector('.sidebar__toggle');
 const headerModal = document.querySelector('.sidebar__wrapper');
 
-// intersection observer for header
-
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -21,9 +19,10 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    rootMargin: '102px',
+    rootMargin: '-10px'
   }
 );
+
 
 const hideHeader = document.querySelector('.main__content');
 observer.observe(hideHeader);
@@ -132,4 +131,10 @@ headerToggle.addEventListener('click', () => {
     headerModal.classList.toggle('header__modal--closed');
   }
 });
+
+
+,
+  {
+    rootMargin: '102px',
+  }
 */

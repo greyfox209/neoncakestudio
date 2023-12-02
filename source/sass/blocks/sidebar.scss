@@ -31,6 +31,7 @@
   gap: 1rem;
   margin-bottom: 5rem;
   font-size: 4.8rem;
+  font-weight: 200;
 }
 
 .sidebar__navigation-link {
@@ -57,7 +58,7 @@
 
 .sidebar__toggle {
   position: fixed;
-  top: 2.5rem;
+  top: 3rem;
   right: 4rem;
   width: 60px;
   height: 60px;
@@ -75,7 +76,7 @@
 .sidebar__toggle:hover {
   width: 64px;
   height: 64px;
-  top: 2.3rem;
+  top: 2.8rem;
   right: 3.8rem;
   box-shadow: $blue 0px 0px 40px;
   transition: all 0.1s ease-out;
@@ -84,7 +85,7 @@
 .sidebar__toggle:active {
   width: 64px;
   height: 64px;
-  top: 2.3rem;
+  top: 2.8rem;
   right: 3.8rem;
   box-shadow: $pink 0px 0px 40px;
   transition: all 0.1s ease-out;

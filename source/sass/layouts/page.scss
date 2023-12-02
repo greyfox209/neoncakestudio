@@ -20,8 +20,9 @@
   position: relative;
 }
 
-.page__header {
-  padding-top: 3rem;
+// crhome safari opera
+.page::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: $tablet-width) {
