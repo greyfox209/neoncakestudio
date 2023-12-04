@@ -1,7 +1,40 @@
-.about-wrapper {
-  margin-bottom: 4rem;
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-top: 10rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  padding-bottom: 10rem;
+}
+
+.about::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  content: "";
+  z-index: -2;
+}
+
+.about::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/img/stars-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  content: "";
+  z-index: -1;
 }
 
 .about__information {
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
 }
+
