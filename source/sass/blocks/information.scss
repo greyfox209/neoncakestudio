@@ -1,14 +1,25 @@
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding-top: 25rem;
+}
+
 .information__title {
+  max-width: 52rem;
   margin-bottom: 6rem;
-  font-weight: 600;
-  font-size: 16rem;
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .information__text {
-  max-width: 86rem;
-
-  font-weight: 300;
-  font-size: 6rem;
+  max-width: 52rem;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 1.5;
   text-transform: uppercase;
 }
