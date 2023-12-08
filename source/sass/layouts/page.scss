@@ -13,13 +13,13 @@
   font-weight: 400;
   font-size: $fs-100;
   color: $white;
-  background-color: $bg-main;
+  background-color: $black;
 }
 
 .page__wrapper {
   position: relative;
 }
-/*
+
 // crhome safari opera
 .page::-webkit-scrollbar {
   display: none;
@@ -30,4 +30,3 @@
     padding-top: 2rem;
   }
 }
-*/
