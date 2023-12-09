@@ -17,13 +17,39 @@
 }
 
 .videos__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 50vh;
+  padding: 10%;
   background-color: $bg-main;
+
+  box-sizing: border-box;
+}
+
+.videos__card-title {
+  margin-bottom: 3rem;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 5rem);
+  line-height: 1;
+  text-transform: uppercase;
+
+  background-image: -webkit-linear-gradient(0deg, $pink 12%, $blue 88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.videos__card-text {
+  font-weight: 200;
+  font-size: clamp(1.6rem, 1vw, 2rem);
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .videos__content {
   height: 50vh;
-  background-color: $blue;
 }
 
 .videos__text-block--wrapper {
