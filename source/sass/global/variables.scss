@@ -16,8 +16,10 @@ $white: rgba(255, 255, 255, 1);
 $black: rgba(0, 0, 0, 1);
 $bg-main: rgba(18, 18, 18, 1);
 $bg-glass-effect: rgba(18, 18, 18, 0.8);
-$bg-second: rgba(21, 22, 24, 1);
+$bg-second: rgb(7, 10, 15);
 $pink: rgba(255, 150, 255, 1);
 $pink-box-shadow: rgba(255, 150, 255, 0.6);
 $blue: rgba(128, 242, 255, 1);
+
+$pink-blue-gradient: -webkit-linear-gradient(0deg, $pink 12%, $blue 88%);
 
