@@ -1,6 +1,6 @@
 .button {
-  width: 24rem;
-  padding: 1rem;
+  width: 36rem;
+  padding: 2rem;
   background-color: transparent;
   border: 2px solid $pink;
   border-radius: 10px;
@@ -8,23 +8,23 @@
   text-align: center;
   text-transform: uppercase;
   font-family: 'Exo 2', sans-serif;
-  font-weight: 400;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 2.4rem;
   cursor: pointer;
 
-  box-shadow: $pink 0px 0px 30px;
+  box-shadow: $pink 0px 0px 60px;
   transition: all 0.2s ease-out;
 }
 
 .button:hover {
   background-color: $pink;
   color: $white;
-  box-shadow: $pink 0px 0px 40px;
+  box-shadow: $pink 0px 0px 60px;
 }
 
 .button:active {
   background-color: $pink;
   color: $white;
-  box-shadow: $pink 0px 0px 40px;
+  box-shadow: $pink 0px 0px 60px;
   opacity: 0.4;
 }
