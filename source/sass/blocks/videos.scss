@@ -54,9 +54,18 @@
 
 .videos__item:hover {
   transform: scale(1.02);
-}
 
+  border: 2px solid $pink;
+  box-shadow: $pink 0px 0px 16px;
+}
+/*
 .videos__cover-image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+*/
+.videos__content {
   width: 100%;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
@@ -74,6 +83,10 @@
   transition: all 0.2s ease-out;
 }
 
+.videos__item:hover .videos__card {
+  background-color: $bg-main;
+}
+
 .videos__card-title {
   margin-bottom: 2rem;
   font-weight: 300;
@@ -85,8 +98,8 @@
 }
 
 .videos__item:hover .videos__card-title {
-  color: $blue;
-  text-shadow: $blue 0px 0px 30px;
+  color: $pink;
+  text-shadow: $pink 0px 0px 30px;
 }
 
 .videos__card-text {
