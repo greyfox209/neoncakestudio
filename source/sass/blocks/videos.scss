@@ -1,8 +1,9 @@
 .videos {
   padding-top: 8rem;
-  padding-left: 15rem;
-  padding-right: 15rem;
+  padding-left: 16rem;
+  padding-right: 16rem;
   background-color: $bg-second;
+  box-shadow: $black 0px 0px 40px inset;
 
   box-sizing: border-box;
 }
@@ -50,6 +51,8 @@
   flex-direction: column;
   border-radius: 20px;
   transition: all 0.2s ease-out;
+
+  cursor: pointer;
 }
 
 .videos__item:hover {
@@ -58,14 +61,23 @@
   border: 2px solid $pink;
   box-shadow: $pink 0px 0px 16px;
 }
-/*
+
 .videos__cover-image {
   width: 100%;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
 }
-*/
-.videos__content {
+
+.videos__cover-image--hide {
+  display: none;
+}
+
+.videos__cover-video {
+  display: none;
+}
+
+.videos__cover-video--show {
+  display: block;
   width: 100%;
   border-radius: 20px 20px 0 0;
   object-fit: cover;

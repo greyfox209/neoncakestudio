@@ -37,7 +37,25 @@ headerToggle.addEventListener('click', () => {
   }
 });
 
+// videos show on hover
 
+document.querySelectorAll('.videos__item').forEach(item => {
+  item.addEventListener('mouseover', (event) => {
+    const coverImage = item.querySelector('.videos__cover-image');
+    const coverVideo = item.querySelector('.videos__cover-video');
+
+    coverImage.classList.add('videos__cover-image--hide');
+    coverVideo.classList.add('videos__cover-video--show');
+  });
+
+  item.addEventListener('mouseout', (event) => {
+    const coverImage = item.querySelector('.videos__cover-image');
+    const coverVideo = item.querySelector('.videos__cover-video');
+
+    coverImage.classList.remove('videos__cover-image--hide');
+    coverVideo.classList.remove('videos__cover-video--show');
+  });
+});
 
 /*
 const header = document.querySelector('.header__block');
