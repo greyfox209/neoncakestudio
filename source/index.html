@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neon Cake Studio</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page__body">
@@ -181,7 +182,7 @@
             </div>
           </div>
         </section>
-        <section class="main__coubs coubs coubs--wrapper" id="coubs">
+        <!--<section class="main__coubs coubs coubs--wrapper" id="coubs">
           <div class="coubs__title-block">
             <h2 class="coubs__title">Coub's</h2>
           </div>
@@ -217,11 +218,11 @@
               </li>
             </ul>
           </div>
-        </section>
-        <section class="main__gallery gallery | container" id="gallery">
+        </section>-->
+        <section class="main__gallery gallery" id="gallery">
           <div class="gallery--wrapper">
             <h2 class="gallery__title">Фото</h2>
-            <ul class="gallery__list">
+            <!--<ul class="gallery__list">
               <li class="gallery__item">
                 <img class="gallery__image" src="#" alt="">
               </li>
@@ -235,6 +236,31 @@
                 <img class="gallery__image" src="#" alt="">
               </li>
             </ul>
+          </div>-->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="media/img/carousel/2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="media/img/carousel/8.jpg" />
+              </div>
+            </div>
           </div>
         </section>
         <div class="main__cta cta cta--wrapper">
@@ -286,8 +312,7 @@
     </footer>
   </div>
 
-
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 

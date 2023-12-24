@@ -57,6 +57,23 @@ document.querySelectorAll('.videos__item').forEach(item => {
   });
 });
 
+// swiper carousel
+
+const swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  initialSlide: "3",
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+});
+
 /*
 const header = document.querySelector('.header__block');
 const headerToggle = document.querySelector('.header__toggle');
