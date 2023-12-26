@@ -37,31 +37,7 @@
   z-index: 2;
 }
 
-.swiper {
-  width: 100%;
+.gallery__carousel {
   padding-top: 2rem;
   padding-bottom: 50px;
-}
-
-.swiper-slide {
-  align-self: center;
-
-  background-position: center;
-  background-size: cover;
-  width: 400px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 400px;
-  border-radius: 10px;
-
-  transition: all 0.2s ease-out;
-}
-
-.swiper-slide:hover img {
-  transform: scale(1.02);
-
-  border: 2px solid $pink;
-  box-shadow: $pink 0px 0px 16px;
 }
