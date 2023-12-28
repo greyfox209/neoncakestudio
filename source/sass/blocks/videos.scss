@@ -134,8 +134,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 18rem;
-  padding-bottom: 20rem;
+  padding-top: 14rem;
+  padding-bottom: 16rem;
 }
 
 .videos__cta {
@@ -144,9 +144,9 @@
   align-items: center;
 }
 
-.videos__hook-text {
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin-bottom: 4rem;
+.videos__button {
+  width: 36rem;
+
+  background-color: transparent;
 }
 

@@ -3,10 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  padding-right: 15rem;
+  padding-left: 15rem;
 }
 
-.footer__text {
+.footer__logo {
+  margin-bottom: 2rem;
+}
+
+.footer__copyright {
+  margin-right: 4rem;
   font-size: 2rem;
   text-transform: uppercase;
 }
