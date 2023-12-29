@@ -58,7 +58,7 @@
 .videos__item:hover {
   transform: scale(1.02);
 
-  border: 2px solid $pink;
+  outline: 2px solid $pink;
   box-shadow: $pink 0px 0px 16px;
 }
 
