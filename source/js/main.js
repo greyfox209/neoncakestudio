@@ -37,7 +37,9 @@ headerToggle.addEventListener('click', () => {
   }
 });
 
-// videos show on hover
+//videos
+
+// videos show on hover .videos__item
 
 document.querySelectorAll('.videos__item').forEach(item => {
   item.addEventListener('mouseover', (event) => {
@@ -55,6 +57,35 @@ document.querySelectorAll('.videos__item').forEach(item => {
     coverImage.classList.remove('videos__cover-image--hide');
     coverVideo.classList.remove('videos__cover-video--show');
   });
+});
+
+// .modal-video opens on click .videos__item
+
+document.querySelectorAll('.videos__item').forEach(item => {
+  item.addEventListener('click', (event) => {
+    const modalVideo = document.querySelector('.modal-video');
+
+    modalVideo.classList.add('modal-video--show');
+  });
+});
+
+// modal-video close
+
+const modalVideo = document.querySelector('.modal-video');
+const modalClose = document.querySelector('.modal-video__close-button');
+
+modalClose.addEventListener ('click', function (evt) {
+  evt.preventDefault();
+  modalVideo.classList.remove('modal-video--show');
+});
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Esc' || evt.key === 'Escape') {
+    if (modalVideo.classList.contains('modal-video--show')) {
+      evt.preventDefault();
+      modalVideo.classList.remove('modal-video--show');
+    }
+  }
 });
 
 // swiper carousel
