@@ -1,0 +1,153 @@
+/*
+.modal-photo {
+  display: none;
+}
+
+.modal-photo--show {
+  display: block;
+}
+*/
+
+.modal-photo__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  background: $bg-glass-effect;
+  backdrop-filter: blur(16.5px);
+  -webkit-backdrop-filter: blur(16.5px);
+}
+
+.modal-photo__container {
+  position: relative;
+  max-width: 40vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  transition: all 0.2s ease-out;
+}
+
+.modal-photo__content {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.modal-photo__cover-photo {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.modal-photo__card {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem;
+  border-radius: 0 0 20px 20px;
+  background-color: $bg-second;
+
+  transition: all 0.2s ease-out;
+}
+
+.modal-photo__card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
+
+  transition: all 0.2s ease-out;
+}
+
+.modal-photo__card-text {
+  font-weight: 200;
+  opacity: 0.7;
+  font-size: clamp(1.6rem, 1vw, 1.6rem);
+  line-height: 1.5;
+
+  transition: all 0.2s ease-out;
+}
+
+.modal-photo__close-button {
+  position: fixed;
+  top: 3rem;
+  right: 4rem;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: transparent;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  transition: transform 0.5s;
+}
+
+.modal-photo__close-button--inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  color: $white;
+
+  transition: all .25s ease-in-out;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: currentColor;
+
+    transform: translate(-50%, -50%);
+    transition: transform .25s ease-in-out;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.modal-photo__close-button--inner:hover::before,
+.modal-photo__close-button--inner:hover::after {
+  width: 44px;
+  box-shadow: $blue 0px 0px 30px;
+  transition: all 0.1s ease-out;
+}
+
+.modal-photo__close-button--inner:active::before,
+.modal-photo__close-button--inner:active::after {
+  width: 44px;
+  box-shadow: $pink 0px 0px 30px;
+  transition: all 0.1s ease-out;
+}
