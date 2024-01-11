@@ -65,6 +65,7 @@ document.querySelectorAll('.videos__item').forEach(item => {
   item.addEventListener('click', (event) => {
     const modalVideo = document.querySelector('.modal-video');
 
+    document.body.style.overflow = 'hidden';
     modalVideo.classList.add('modal-video--show');
   });
 });
@@ -72,10 +73,11 @@ document.querySelectorAll('.videos__item').forEach(item => {
 // modal-video close
 
 const modalVideo = document.querySelector('.modal-video');
-const modalClose = document.querySelector('.modal-video__close-button');
+const modalVideoClose = document.querySelector('.modal-video__close-button');
 
-modalClose.addEventListener ('click', function (evt) {
+modalVideoClose.addEventListener ('click', function (evt) {
   evt.preventDefault();
+  document.body.style.overflow = 'auto';
   modalVideo.classList.remove('modal-video--show');
 });
 
@@ -83,6 +85,7 @@ window.addEventListener('keydown', function (evt) {
   if (evt.key === 'Esc' || evt.key === 'Escape') {
     if (modalVideo.classList.contains('modal-video--show')) {
       evt.preventDefault();
+      document.body.style.overflow = 'auto';
       modalVideo.classList.remove('modal-video--show');
     }
   }
@@ -90,20 +93,57 @@ window.addEventListener('keydown', function (evt) {
 
 // swiper carousel
 
-const swiper = new Swiper(".mySwiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  initialSlide: "3",
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
+document.addEventListener('DOMContentLoaded', function () {
+  // Инициализация Swiper
+  var mySwiper = new Swiper('.mySwiper', {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    initialSlide: 2,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+  });
+
+  // Получаем элемент модального окна
+  var modal = document.querySelector('.modal-photo');
+
+  // Получаем элементы слайдов
+  var slides = document.querySelectorAll('.mySwiper .swiper-slide');
+
+  // Добавляем обработчик события click для каждого слайда
+  slides.forEach(function (slide, index) {
+    slide.addEventListener('click', function () {
+      // Получаем изображение слайда
+      var slideImage = slide.querySelector('img');
+
+      // Получаем элемент с изображением в модальном окне
+      var modalImage = modal.querySelector('.modal-photo__cover-photo');
+
+      // Устанавливаем изображение слайда в модальное окно
+      modalImage.src = slideImage.src;
+
+      document.body.style.overflow = 'hidden';
+
+      // Открываем модальное окно
+      modal.classList.add('modal-photo--show');
+    });
+  });
+
+  // Добавляем обработчик события click для кнопки закрытия модального окна
+  var closeButton = modal.querySelector('.modal-photo__close-button');
+  closeButton.addEventListener('click', function () {
+    // Закрываем модальное окно
+    document.body.style.overflow = 'auto';
+    modal.classList.remove('modal-photo--show');
+  });
 });
+
 
 /*
 const header = document.querySelector('.header__block');

@@ -1,4 +1,3 @@
-/*
 .modal-photo {
   display: none;
 }
@@ -6,7 +5,6 @@
 .modal-photo--show {
   display: block;
 }
-*/
 
 .modal-photo__wrapper {
   position: fixed;
@@ -49,37 +47,6 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
-}
-
-.modal-photo__card {
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 4rem;
-  border-radius: 0 0 20px 20px;
-  background-color: $bg-second;
-
-  transition: all 0.2s ease-out;
-}
-
-.modal-photo__card-title {
-  margin-bottom: 2rem;
-  font-weight: 300;
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1;
-  text-transform: uppercase;
-
-  transition: all 0.2s ease-out;
-}
-
-.modal-photo__card-text {
-  font-weight: 200;
-  opacity: 0.7;
-  font-size: clamp(1.6rem, 1vw, 1.6rem);
-  line-height: 1.5;
-
-  transition: all 0.2s ease-out;
 }
 
 .modal-photo__close-button {
