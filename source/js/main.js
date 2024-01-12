@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const modalVideo = document.querySelector('.modal-video');
 const modalVideoClose = document.querySelector('.modal-video__close-button');
 
-modalVideoClose.addEventListener ('click', function (evt) {
+modalVideoClose.addEventListener('click', function (evt) {
   evt.preventDefault();
   document.body.style.overflow = 'auto';
   modalVideo.classList.remove('modal-video--show');
@@ -139,8 +139,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Получаем элемент с изображением в модальном окне
       var modalImage = modal.querySelector('.modal-photo__cover-photo');
 
+      // Получаем ссылку на полноразмерное изображение из атрибута data-fullsize
+      var fullSizeImage = slide.getAttribute('data-fullsize');
+
       // Устанавливаем изображение слайда в модальное окно
       modalImage.src = slideImage.src;
+
+      // Устанавливаем ссылку на полноразмерное изображение в атрибут href для ссылки в модальном окне
+      modal.querySelector('.modal-photo__link').href = fullSizeImage;
 
       document.body.style.overflow = 'hidden';
 
