@@ -61,16 +61,30 @@ document.querySelectorAll('.videos__item').forEach(item => {
 
 // .modal-video opens on click .videos__item
 
-document.querySelectorAll('.videos__item').forEach(item => {
-  item.addEventListener('click', (event) => {
-    const modalVideo = document.querySelector('.modal-video');
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.querySelector('.modal-video');
+  const modalVideo = modal.querySelector('.modal-video__cover-video');
+  const modalTitle = modal.querySelector('.modal-video__card-title');
+  const modalText = modal.querySelector('.modal-video__card-text');
 
-    document.body.style.overflow = 'hidden';
-    modalVideo.classList.add('modal-video--show');
+  const videoItems = document.querySelectorAll('.videos__item');
+
+  videoItems.forEach(item => {
+    item.addEventListener('click', function () {
+      const coverVideo = item.querySelector('.videos__cover-video source').getAttribute('src');
+      const title = item.querySelector('.videos__card-title').textContent;
+      const text = item.querySelector('.videos__card-text').textContent;
+
+      modalVideo.setAttribute('src', coverVideo);
+      modalTitle.textContent = title;
+      modalText.textContent = text;
+
+      document.body.style.overflow = 'hidden';
+
+      modal.classList.add('modal-video--show');
+    });
   });
 });
-
-// modal-video close
 
 const modalVideo = document.querySelector('.modal-video');
 const modalVideoClose = document.querySelector('.modal-video__close-button');
@@ -91,10 +105,10 @@ window.addEventListener('keydown', function (evt) {
   }
 });
 
+
 // swiper carousel
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Инициализация Swiper
   var mySwiper = new Swiper('.mySwiper', {
     effect: "coverflow",
     grabCursor: true,
@@ -138,63 +152,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Добавляем обработчик события click для кнопки закрытия модального окна
   var closeButton = modal.querySelector('.modal-photo__close-button');
   closeButton.addEventListener('click', function () {
-    // Закрываем модальное окно
     document.body.style.overflow = 'auto';
     modal.classList.remove('modal-photo--show');
   });
-});
 
-
-/*
-const header = document.querySelector('.header__block');
-const headerToggle = document.querySelector('.header__toggle');
-
-// intersection observer for header
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      header.classList.toggle('header__block--hidden', entry.isIntersecting);
-
-      if (!headerModal.classList.contains('header__modal--opened')) {
-        headerToggle.classList.toggle('header__toggle--show', entry.isIntersecting);
+  window.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Esc' || evt.key === 'Escape') {
+      if (modal.classList.contains('modal-photo--show')) {
+        evt.preventDefault();
+        document.body.style.overflow = 'auto';
+        modal.classList.remove('modal-photo--show');
       }
-    });
-  },
-  {
-    rootMargin: '102px',
-  }
-);
-
-const hideHeader = document.querySelector('.main__content');
-observer.observe(hideHeader);
-
-// header modal toggle
-
-const headerModal = document.querySelector('.header__modal--wrapper');
-
-headerToggle.addEventListener('click', () => {
-  headerModal.classList.toggle('header__modal--opened');
-  headerToggle.classList.add('header__toggle--show');
-});
-*/
-
-/*
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) {
-      entry.target.classList.add('page__body--color-test');
-    } else {
-      entry.target.classList.remove('page__body--color-test');
     }
   });
-}, options);
-
-const hideHeader = document.querySelector('.main__content');
-observer.observe(hideHeader);
-*/
-
+});
 
 // hide header on scroll
 
@@ -243,4 +214,38 @@ headerToggle.addEventListener('click', () => {
   {
     rootMargin: '102px',
   }
+*/
+
+// открытие и закрытие модального окна
+
+/*
+document.querySelectorAll('.videos__item').forEach(item => {
+  item.addEventListener('click', (event) => {
+    const modalVideo = document.querySelector('.modal-video');
+
+    document.body.style.overflow = 'hidden';
+    modalVideo.classList.add('modal-video--show');
+  });
+});
+
+// modal-video close
+
+const modalVideo = document.querySelector('.modal-video');
+const modalVideoClose = document.querySelector('.modal-video__close-button');
+
+modalVideoClose.addEventListener ('click', function (evt) {
+  evt.preventDefault();
+  document.body.style.overflow = 'auto';
+  modalVideo.classList.remove('modal-video--show');
+});
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Esc' || evt.key === 'Escape') {
+    if (modalVideo.classList.contains('modal-video--show')) {
+      evt.preventDefault();
+      document.body.style.overflow = 'auto';
+      modalVideo.classList.remove('modal-video--show');
+    }
+  }
+});
 */
