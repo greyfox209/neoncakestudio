@@ -29,3 +29,13 @@
 .swiper-3d .swiper-slide-shadow-right {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
+
+.swiper-pagination-bullet {
+  background: $white;
+  box-shadow: 0 0 12px 0 $pink;
+  border-radius: 2px;
+}
+
+.swiper-pagination-bullet-active {
+  background: $pink;
+}

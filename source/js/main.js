@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    initialSlide: 2,
+    initialSlide: 3,
     slidesPerView: "auto",
     coverflowEffect: {
       rotate: 50,
@@ -121,6 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
       depth: 100,
       modifier: 1,
       slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
     },
   });
 

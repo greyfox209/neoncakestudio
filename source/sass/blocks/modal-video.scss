@@ -15,7 +15,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 10;
+  height: 100%;
+  z-index: 30;
 
   background: $bg-glass-effect;
   backdrop-filter: blur(16.5px);
