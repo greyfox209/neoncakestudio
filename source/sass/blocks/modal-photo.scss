@@ -111,14 +111,124 @@
 
 .modal-photo__close-button--inner:hover::before,
 .modal-photo__close-button--inner:hover::after {
-  width: 44px;
+  width: 50px;
   box-shadow: $blue 0px 0px 30px;
   transition: all 0.1s ease-out;
 }
 
 .modal-photo__close-button--inner:active::before,
 .modal-photo__close-button--inner:active::after {
-  width: 44px;
+  width: 50px;
   box-shadow: $pink 0px 0px 30px;
   transition: all 0.1s ease-out;
+}
+
+.modal-photo__arrow-button {
+  position: fixed;
+  width: 100px;
+  height: 180px;
+  padding: 0;
+  background: transparent;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  transition: transform 0.5s;
+}
+
+.modal-photo__arrow-button--left {
+  display: block;
+  top: 50%;
+  left: 10rem;
+  transform: translate(0, -50%);
+}
+
+.modal-photo__arrow-button--right {
+  display: block;
+  top: 50%;
+  right: 10rem;
+  transform: translate(0, -50%);
+}
+
+.modal-photo__arrow-button--hide {
+  display: none;
+}
+
+.modal-photo__arrow-button--inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  display: block;
+  width: 100px;
+  height: 180px;
+
+  color: $white;
+
+  transition: all .25s ease-in-out;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: currentColor;
+
+    transform: translate(-50%, -50%);
+    transition: transform .25s ease-in-out;
+  }
+}
+
+.modal-photo__arrow-button--inner-left {
+  &:before {
+    transform: translate(-50%, 325%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -325%) rotate(-45deg);
+  }
+}
+
+.modal-photo__arrow-button--inner-right {
+  &:before {
+    transform: translate(-50%, -325%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, 325%) rotate(-45deg);
+  }
+}
+
+.modal-photo__arrow-button .modal-photo__arrow-button--inner:hover::before,
+.modal-photo__arrow-button .modal-photo__arrow-button--inner:hover::after {
+  box-shadow: $blue 0px 0px 30px;
+  transition: all 0.1s ease-out;
+}
+
+.modal-photo__arrow-button .modal-photo__arrow-button--inner-left:hover {
+  &:before {
+    transform: translate(-75%, 325%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-75%, -325%) rotate(-45deg);
+  }
+}
+
+.modal-photo__arrow-button .modal-photo__arrow-button--inner-right:hover {
+  &:before {
+    transform: translate(-25%, -325%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-25%, 325%) rotate(-45deg);
+  }
 }

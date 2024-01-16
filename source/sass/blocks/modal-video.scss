@@ -133,14 +133,14 @@
 
 .modal-video__close-button--inner:hover::before,
 .modal-video__close-button--inner:hover::after {
-  width: 44px;
+  width: 50px;
   box-shadow: $blue 0px 0px 30px;
   transition: all 0.1s ease-out;
 }
 
 .modal-video__close-button--inner:active::before,
 .modal-video__close-button--inner:active::after {
-  width: 44px;
+  width: 50px;
   box-shadow: $pink 0px 0px 30px;
   transition: all 0.1s ease-out;
 }

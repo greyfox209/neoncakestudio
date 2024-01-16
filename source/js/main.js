@@ -105,8 +105,7 @@ window.addEventListener('keydown', function (evt) {
   }
 });
 
-
-// swiper carousel
+// swiper
 
 document.addEventListener('DOMContentLoaded', function () {
   var mySwiper = new Swiper('.mySwiper', {
@@ -133,9 +132,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // Получаем элементы слайдов
   var slides = document.querySelectorAll('.mySwiper .swiper-slide');
 
-  // Добавляем обработчик события click для каждого слайда
+  // Получаем кнопки влево и вправо
+  var prevButton = modal.querySelector('.modal-photo__arrow-button--left');
+  var nextButton = modal.querySelector('.modal-photo__arrow-button--right');
+
   slides.forEach(function (slide, index) {
     slide.addEventListener('click', function () {
+      var currentSlideIndex = getCurrentSlideIndex();
       // Получаем изображение слайда
       var slideImage = slide.querySelector('img');
 
@@ -151,6 +154,17 @@ document.addEventListener('DOMContentLoaded', function () {
       // Устанавливаем ссылку на полноразмерное изображение в атрибут href для ссылки в модальном окне
       modal.querySelector('.modal-photo__link').href = fullSizeImage;
 
+      if (index === 0) {
+        prevButton.classList.add('modal-photo__arrow-button--hide');
+        nextButton.classList.remove('modal-photo__arrow-button--hide');
+      } else if (index === slides.length - 1) {
+        prevButton.classList.remove('modal-photo__arrow-button--hide');
+        nextButton.classList.add('modal-photo__arrow-button--hide');
+      } else {
+        // Если не первый и не последний, обнуляем классы
+        resetArrowButtonVisibility();
+      }
+
       document.body.style.overflow = 'hidden';
 
       // Открываем модальное окно
@@ -158,11 +172,100 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Добавляем обработчик события click для кнопки влево
+  prevButton.addEventListener('click', function () {
+    showPreviousSlide();
+  });
+
+  // Добавляем обработчик события click для кнопки вправо
+  nextButton.addEventListener('click', function () {
+    showNextSlide();
+  });
+
+  // Функция для отображения предыдущего слайда
+  function showPreviousSlide() {
+    var currentSlideIndex = getCurrentSlideIndex();
+
+    // Если текущий слайд не первый, отобразить предыдущий слайд
+    if (currentSlideIndex > 0) {
+      var previousSlide = slides[currentSlideIndex - 1];
+      showSlide(previousSlide);
+    }
+
+    // Обновляем видимость кнопок в зависимости от текущего слайда
+    updateArrowButtonVisibility();
+  }
+
+  // Функция для отображения следующего слайда
+  function showNextSlide() {
+    var currentSlideIndex = getCurrentSlideIndex();
+
+    // Если текущий слайд не последний, отобразить следующий слайд
+    if (currentSlideIndex < slides.length - 1) {
+      var nextSlide = slides[currentSlideIndex + 1];
+      showSlide(nextSlide);
+    }
+
+    // Обновляем видимость кнопок в зависимости от текущего слайда
+    updateArrowButtonVisibility();
+  }
+
+  // Функция для отображения конкретного слайда
+  function showSlide(slide) {
+    var slideImage = slide.querySelector('img');
+    var modalImage = modal.querySelector('.modal-photo__cover-photo');
+    var fullSizeImage = slide.getAttribute('data-fullsize');
+
+    modalImage.src = slideImage.src;
+    modal.querySelector('.modal-photo__link').href = fullSizeImage;
+  }
+
+  // Функция для получения индекса текущего слайда
+  function getCurrentSlideIndex() {
+    var modalImageSrc = modal.querySelector('.modal-photo__cover-photo').src;
+
+    for (var i = 0; i < slides.length; i++) {
+      var slideImage = slides[i].querySelector('img');
+      if (slideImage.src === modalImageSrc) {
+        return i;
+      }
+    }
+
+    return -1;
+  }
+
+  // Функция для обновления видимости кнопок в зависимости от текущего слайда
+  function updateArrowButtonVisibility() {
+    var currentSlideIndex = getCurrentSlideIndex();
+
+    // Проверяем, является ли текущий слайд первым
+    if (currentSlideIndex === 0) {
+      prevButton.classList.add('modal-photo__arrow-button--hide');
+    } else {
+      prevButton.classList.remove('modal-photo__arrow-button--hide');
+    }
+
+    // Проверяем, является ли текущий слайд последним
+    if (currentSlideIndex === slides.length - 1) {
+      nextButton.classList.add('modal-photo__arrow-button--hide');
+    } else {
+      nextButton.classList.remove('modal-photo__arrow-button--hide');
+    }
+  }
+
+  // Функция для сброса видимости кнопок в начальное состояние
+  function resetArrowButtonVisibility() {
+    prevButton.classList.remove('modal-photo__arrow-button--hide');
+    nextButton.classList.remove('modal-photo__arrow-button--hide');
+  }
+
   // Добавляем обработчик события click для кнопки закрытия модального окна
   var closeButton = modal.querySelector('.modal-photo__close-button');
   closeButton.addEventListener('click', function () {
     document.body.style.overflow = 'auto';
     modal.classList.remove('modal-photo--show');
+
+    resetArrowButtonVisibility();
   });
 
   window.addEventListener('keydown', function (evt) {
@@ -171,90 +274,9 @@ document.addEventListener('DOMContentLoaded', function () {
         evt.preventDefault();
         document.body.style.overflow = 'auto';
         modal.classList.remove('modal-photo--show');
+
+        resetArrowButtonVisibility();
       }
     }
   });
 });
-
-// hide header on scroll
-
-/*
-let lastScrollY = window.scrollY;
-
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-window.addEventListener('scroll', () => {
-  if (lastScrollY < window.scrollY) {
-    pageHeader.classList.add('page__header--hidden');
-  } else {
-    pageHeader.classList.remove('page__header--hidden');
-  }
-
-  if (!isElementInViewport(pageHeader)) {
-    headerToggle.classList.add('header__toggle--show');
-  } else {
-    headerToggle.classList.remove('header__toggle--show');
-  }
-
-  lastScrollY = window.scrollY;
-});
-*/
-
-/*
-headerToggle.addEventListener('click', () => {
-  if (headerModal.classList.contains('header__modal--closed')) {
-    headerModal.classList.toggle('header__modal--closed');
-    headerToggle.classList.add('header__toggle--show');
-  } else {
-    headerModal.classList.toggle('header__modal--closed');
-  }
-});
-
-
-,
-  {
-    rootMargin: '102px',
-  }
-*/
-
-// открытие и закрытие модального окна
-
-/*
-document.querySelectorAll('.videos__item').forEach(item => {
-  item.addEventListener('click', (event) => {
-    const modalVideo = document.querySelector('.modal-video');
-
-    document.body.style.overflow = 'hidden';
-    modalVideo.classList.add('modal-video--show');
-  });
-});
-
-// modal-video close
-
-const modalVideo = document.querySelector('.modal-video');
-const modalVideoClose = document.querySelector('.modal-video__close-button');
-
-modalVideoClose.addEventListener ('click', function (evt) {
-  evt.preventDefault();
-  document.body.style.overflow = 'auto';
-  modalVideo.classList.remove('modal-video--show');
-});
-
-window.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Esc' || evt.key === 'Escape') {
-    if (modalVideo.classList.contains('modal-video--show')) {
-      evt.preventDefault();
-      document.body.style.overflow = 'auto';
-      modalVideo.classList.remove('modal-video--show');
-    }
-  }
-});
-*/
