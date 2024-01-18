@@ -5,6 +5,13 @@
   align-items: center;
   text-align: left;
   width: 100%;
+
+  transition: 1s;
+  transform: translateX(-50vw);
+}
+
+.information--visible {
+  transform: translateX(0vw);
 }
 
 .information__title {

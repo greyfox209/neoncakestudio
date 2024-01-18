@@ -1,3 +1,5 @@
+// hideHeader observer
+
 const header = document.querySelector('.header__block');
 const headerToggle = document.querySelector('.sidebar__toggle');
 const headerModal = document.querySelector('.sidebar__wrapper');
@@ -27,6 +29,26 @@ const observer = new IntersectionObserver(
 const hideHeader = document.querySelector('.main__content');
 observer.observe(hideHeader);
 
+// informationBlockVisible observer
+
+const information = document.querySelector('.information');
+
+const aboutObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        information.classList.add('information--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-200px'
+  }
+);
+
+const informationBlockVisible = document.querySelector('.about__image-block');
+aboutObserver.observe(informationBlockVisible);
+
 // header modal toggle
 
 headerToggle.addEventListener('click', () => {
@@ -36,6 +58,77 @@ headerToggle.addEventListener('click', () => {
     headerToggle.classList.remove('sidebar__toggle--show');
   }
 });
+
+// Паралакс эффект секций .intro и .main__content
+
+const ADDITIONALMARGIN = 120;
+
+const introRef = document.querySelector(".intro");
+const mainContentRef = document.querySelector(".main__content");
+const layerRefs = document.querySelectorAll(".layer");
+
+const etalonTop = introRef.getBoundingClientRect().top;
+const etalonBottom = introRef.getBoundingClientRect().bottom;
+const etalonHeight = introRef.offsetHeight;
+const etalonDistance = etalonTop + etalonHeight;
+
+let currentIndex = 0;
+let currentRef = layerRefs[currentIndex];
+currentRef.style.marginTop = etalonHeight + ADDITIONALMARGIN + "px";
+
+let currentPos = window.scrollY;
+
+function toggleStickyBehavior() {
+  let scrollPosition = window.scrollY;
+  let isScrollUp = currentPos > scrollPosition;
+
+  function getDownDistance() {
+    return (
+      etalonBottom * (currentIndex + 1) -
+      etalonTop * (currentIndex + 1) +
+      etalonTop
+    );
+  }
+
+  function getUpDistance() {
+    return (
+      etalonBottom * currentIndex + etalonTop * (currentIndex + 1) - etalonTop
+    );
+  }
+
+  if (!isScrollUp && scrollPosition >= getDownDistance()) {
+    currentRef.style.marginTop = 0;
+
+    if (!introRef.classList.contains("intro--fixed") && currentIndex < 4) {
+      introRef.classList.add("intro--fixed");
+
+      currentIndex += 1;
+      currentRef = layerRefs[currentIndex];
+    }
+    currentRef.style.marginTop = getDownDistance() + ADDITIONALMARGIN + "px";
+  }
+
+  if (isScrollUp && getUpDistance() > scrollPosition && currentIndex > 0) {
+    currentRef.style.marginTop = 0;
+    currentIndex -= 1;
+    currentRef = layerRefs[currentIndex];
+    if (introRef.classList.contains("intro--fixed")) {
+      introRef.classList.remove("intro--fixed");
+    }
+
+    if (currentIndex < 1) {
+      currentRef.style.marginTop =
+        getUpDistance() + etalonBottom - etalonTop + ADDITIONALMARGIN + "px";
+    } else {
+      currentRef.style.marginTop = getUpDistance() + etalonBottom + "px";
+    }
+  }
+
+  currentPos = window.scrollY;
+}
+
+window.addEventListener("scroll", toggleStickyBehavior);
+toggleStickyBehavior();
 
 //videos
 
@@ -280,3 +373,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+/*
+const introRef = document.querySelector(".intro");
+const mainContentRef = document.querySelector(".main__content");
+
+const etalonTop = introRef.getBoundingClientRect().top;
+const etalonBottom = introRef.getBoundingClientRect().bottom;
+const etalonHeight = introRef.offsetHeight;
+const etalonDistance = etalonTop + etalonHeight;
+
+let isIntroFixed = false;
+
+function toggleStickyBehavior() {
+  let scrollPosition = window.scrollY;
+
+  if (scrollPosition >= etalonDistance && !isIntroFixed) {
+    introRef.classList.add("intro--fixed");
+    mainContentRef.style.marginTop = etalonHeight + "px";
+    isIntroFixed = true;
+  } else if (scrollPosition < etalonTop && isIntroFixed) {
+    introRef.classList.remove("intro--fixed");
+    mainContentRef.style.marginTop = 0;
+    isIntroFixed = false;
+  }
+}
+
+window.addEventListener("scroll", toggleStickyBehavior);
+toggleStickyBehavior();
+*/
