@@ -4,7 +4,7 @@ const header = document.querySelector('.header__block');
 const headerToggle = document.querySelector('.sidebar__toggle');
 const headerModal = document.querySelector('.sidebar__wrapper');
 
-const observer = new IntersectionObserver(
+const headerObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -27,7 +27,7 @@ const observer = new IntersectionObserver(
 
 
 const hideHeader = document.querySelector('.main__content');
-observer.observe(hideHeader);
+headerObserver.observe(hideHeader);
 
 // informationBlockVisible observer
 
@@ -48,6 +48,66 @@ const aboutObserver = new IntersectionObserver(
 
 const informationBlockVisible = document.querySelector('.about__image-block');
 aboutObserver.observe(informationBlockVisible);
+
+// videosTitle observer
+
+const videosTitle = document.querySelector('.videos__title');
+
+const videosTitleObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        videosTitle.classList.add('videos__title--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-30px'
+  }
+);
+
+const videosTitleVisible = document.querySelector('.main__videos');
+videosTitleObserver.observe(videosTitleVisible);
+
+// videosItems observer
+
+const videosItems = document.querySelectorAll('.videos__item');
+
+const observerOptions = {
+  rootMargin: '10px'
+};
+
+videosItems.forEach((videosItem, index) => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const leftClass = 'videos__item-left--visible';
+        const rightClass = 'videos__item-right--visible';
+
+        // Проверяем четность индекса элемента
+        if (index % 2 === 0) {
+          videosItem.classList.add(leftClass);
+          const sibling = videosItems[index + 1];
+          if (sibling) {
+            sibling.classList.add(rightClass);
+          }
+        } else {
+          videosItem.classList.add(rightClass);
+          const sibling = videosItems[index - 1];
+          if (sibling) {
+            sibling.classList.add(leftClass);
+          }
+        }
+
+        // Остановить наблюдение после первого пересечения
+        observer.unobserve(videosItem);
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(videosItem);
+});
+
 
 // header modal toggle
 
