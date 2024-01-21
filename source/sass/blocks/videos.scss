@@ -153,8 +153,8 @@
 // Animations
 
 .videos__title--visible {
-  -webkit-animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @-webkit-keyframes fade-in-bottom {
@@ -187,8 +187,8 @@
 
 
 .videos__item-left--visible {
-  -webkit-animation: fade-in-bl 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-bl 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bl 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bl 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @-webkit-keyframes fade-in-bl {
@@ -220,8 +220,8 @@
 }
 
 .videos__item-right--visible {
-  -webkit-animation: fade-in-br 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-br 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-br 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-br 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @-webkit-keyframes fade-in-br {
@@ -250,4 +250,9 @@
     transform: translateX(0) translateY(0);
     opacity: 1;
   }
+}
+
+.videos__cta--visible {
+  -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }

@@ -32,22 +32,24 @@ headerObserver.observe(hideHeader);
 // informationBlockVisible observer
 
 const information = document.querySelector('.information');
+const aboutImage = document.querySelector('.about__image');
 
 const aboutObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         information.classList.add('information--visible');
+        aboutImage.classList.add('about__image--visible');
       }
     });
   },
   {
-    rootMargin: '-200px'
+    rootMargin: '-100px'
   }
 );
 
-const informationBlockVisible = document.querySelector('.about__image-block');
-aboutObserver.observe(informationBlockVisible);
+const aboutVisible = document.querySelector('.about__image-block');
+aboutObserver.observe(aboutVisible);
 
 // videosTitle observer
 
@@ -107,6 +109,26 @@ videosItems.forEach((videosItem, index) => {
 
   observer.observe(videosItem);
 });
+
+// videosTitle observer
+
+const videosCta = document.querySelector('.videos__cta');
+
+const videosCtaObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        videosCta.classList.add('videos__cta--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-50px'
+  }
+);
+
+const videosCtaVisible = document.querySelector('.videos__cta--wrapper');
+videosCtaObserver.observe(videosCtaVisible);
 
 
 // header modal toggle
