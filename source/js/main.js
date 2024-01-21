@@ -29,7 +29,7 @@ const headerObserver = new IntersectionObserver(
 const hideHeader = document.querySelector('.main__content');
 headerObserver.observe(hideHeader);
 
-// informationBlockVisible observer
+// aboutVisible observer
 
 const information = document.querySelector('.information');
 const aboutImage = document.querySelector('.about__image');
@@ -110,7 +110,7 @@ videosItems.forEach((videosItem, index) => {
   observer.observe(videosItem);
 });
 
-// videosTitle observer
+// videosCta observer
 
 const videosCta = document.querySelector('.videos__cta');
 
@@ -129,6 +129,67 @@ const videosCtaObserver = new IntersectionObserver(
 
 const videosCtaVisible = document.querySelector('.videos__cta--wrapper');
 videosCtaObserver.observe(videosCtaVisible);
+
+// galleryTitle observer
+
+const galleryTitle = document.querySelector('.gallery__title');
+
+const galleryTitleObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        galleryTitle.classList.add('gallery__title--visible');
+        galleryCarousel.classList.add('gallery__carousel--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-30px'
+  }
+);
+
+const galleryTitleVisible = document.querySelector('.gallery--wrapper');
+galleryTitleObserver.observe(galleryTitleVisible);
+
+// galleryCarousel observer
+
+const galleryCarousel = document.querySelector('.gallery__carousel');
+
+const galleryCarouselObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        galleryCarousel.classList.add('gallery__carousel--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-30px'
+  }
+);
+
+const galleryCarouselVisible = document.querySelector('.gallery__title');
+galleryCarouselObserver.observe(galleryCarouselVisible);
+
+// cta observer
+
+const ctaWrapper = document.querySelector('.cta--wrapper');
+
+const ctaObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        ctaWrapper.classList.add('cta--wrapper--visible');
+      }
+    });
+  },
+  {
+    rootMargin: '-30px'
+  }
+);
+
+const ctaVisible = document.querySelector('.cta');
+ctaObserver.observe(ctaVisible);
 
 
 // header modal toggle
