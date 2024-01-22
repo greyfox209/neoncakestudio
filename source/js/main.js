@@ -299,6 +299,7 @@ document.querySelectorAll('.videos__item').forEach(item => {
 
 document.addEventListener('DOMContentLoaded', function () {
   const modal = document.querySelector('.modal-video');
+  const modalContainer = document.querySelector('.modal-video__container');
   const modalVideo = modal.querySelector('.modal-video__cover-video');
   const modalTitle = modal.querySelector('.modal-video__card-title');
   const modalText = modal.querySelector('.modal-video__card-text');
@@ -318,17 +319,20 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = 'hidden';
 
       modal.classList.add('modal-video--show');
+      modalContainer.classList.add('modal-video__container--visible');
     });
   });
 });
 
 const modalVideo = document.querySelector('.modal-video');
+const modalContainer = document.querySelector('.modal-video__container');
 const modalVideoClose = document.querySelector('.modal-video__close-button');
 
 modalVideoClose.addEventListener('click', function (evt) {
   evt.preventDefault();
   document.body.style.overflow = 'auto';
   modalVideo.classList.remove('modal-video--show');
+  modalContainer.classList.remove('modal-video__container--visible');
 });
 
 window.addEventListener('keydown', function (evt) {
@@ -337,6 +341,7 @@ window.addEventListener('keydown', function (evt) {
       evt.preventDefault();
       document.body.style.overflow = 'auto';
       modalVideo.classList.remove('modal-video--show');
+      modalContainer.classList.remove('modal-video__container--visible');
     }
   }
 });

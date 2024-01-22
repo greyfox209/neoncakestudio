@@ -56,8 +56,6 @@
 }
 
 .videos__item:hover {
-  transform: scale(1.02);
-
   outline: 2px solid $pink;
   box-shadow: $pink 0px 0px 16px;
 }
@@ -153,21 +151,21 @@
 // Animations
 
 .videos__title--visible {
-  -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .videos__item-left--visible {
-  -webkit-animation: fade-in-bl 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-bl 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bl 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bl 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .videos__item-right--visible {
-  -webkit-animation: fade-in-br 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-br 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-br 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-br 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .videos__cta--visible {
-  -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
