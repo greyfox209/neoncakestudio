@@ -22,6 +22,9 @@
   background: $bg-glass-effect;
   backdrop-filter: blur(16.5px);
   -webkit-backdrop-filter: blur(16.5px);
+
+  -webkit-animation: fade-in-fwd 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-fwd 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .modal-photo__container {
@@ -32,6 +35,21 @@
   flex-direction: column;
   border-radius: 20px;
   transition: all 0.2s ease-out;
+}
+
+.modal-photo__container--visible {
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.modal-photo__container--slide-left-in {
+  -webkit-animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.modal-photo__container--slide-right-in {
+  -webkit-animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .modal-photo__content {
