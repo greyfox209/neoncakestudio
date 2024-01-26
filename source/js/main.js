@@ -298,6 +298,7 @@ document.querySelectorAll('.videos__item').forEach(item => {
 
 document.addEventListener('DOMContentLoaded', function () {
   const modal = document.querySelector('.modal-video');
+  const modalWrapper = document.querySelector('.modal-video__wrapper');
   const modalContainer = document.querySelector('.modal-video__container');
   const modalVideo = modal.querySelector('.modal-video__cover-video');
   const modalTitle = modal.querySelector('.modal-video__card-title');
@@ -318,20 +319,38 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = 'hidden';
 
       modal.classList.add('modal-video--show');
+      modalWrapper.classList.add('modal-video__wrapper--show');
       modalContainer.classList.add('modal-video__container--visible');
     });
   });
 });
 
 const modalVideo = document.querySelector('.modal-video');
+const modalWrapper = document.querySelector('.modal-video__wrapper');
 const modalContainer = document.querySelector('.modal-video__container');
 const modalVideoClose = document.querySelector('.modal-video__close-button');
 
 modalVideoClose.addEventListener('click', function (evt) {
-  evt.preventDefault();
   document.body.style.overflow = 'auto';
-  modalVideo.classList.remove('modal-video--show');
+
+  modalWrapper.classList.remove('modal-video__wrapper--show');
+  modalWrapper.classList.add('modal-video__wrapper--hide');
+  void modalWrapper.offsetWidth;
+  setTimeout(function () {
+    modalWrapper.classList.remove('modal-video__wrapper--hide');
+  }, 200);
+
   modalContainer.classList.remove('modal-video__container--visible');
+  modalContainer.classList.add('modal-video__container--hide');
+  setTimeout(function () {
+    modalContainer.classList.remove('modal-video__container--hide');
+  }, 200);
+
+  setTimeout(function () {
+    modalVideo.classList.remove('modal-video--show');
+  }, 200);
+
+  resetArrowButtonVisibility();
 });
 
 window.addEventListener('keydown', function (evt) {
@@ -339,8 +358,25 @@ window.addEventListener('keydown', function (evt) {
     if (modalVideo.classList.contains('modal-video--show')) {
       evt.preventDefault();
       document.body.style.overflow = 'auto';
-      modalVideo.classList.remove('modal-video--show');
+
+      modalWrapper.classList.remove('modal-video__wrapper--show');
+      modalWrapper.classList.add('modal-video__wrapper--hide');
+      void modalWrapper.offsetWidth;
+      setTimeout(function () {
+        modalWrapper.classList.remove('modal-video__wrapper--hide');
+      }, 200);
+
       modalContainer.classList.remove('modal-video__container--visible');
+      modalContainer.classList.add('modal-video__container--hide');
+      setTimeout(function () {
+        modalContainer.classList.remove('modal-video__container--hide');
+      }, 200);
+
+      setTimeout(function () {
+        modalVideo.classList.remove('modal-video--show');
+      }, 200);
+
+      resetArrowButtonVisibility();
     }
   }
 });
@@ -368,6 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var modal = document.querySelector('.modal-photo');
   const modalPhotoContainer = document.querySelector('.modal-photo__container');
+  const modalPhotoWrapper = document.querySelector('.modal-photo__wrapper');
   var slides = document.querySelectorAll('.mySwiper .swiper-slide');
 
   var prevButton = modal.querySelector('.modal-photo__arrow-button--left');
@@ -402,6 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Открываем модальное окно
       modal.classList.add('modal-photo--show');
+      modalPhotoWrapper.classList.add('modal-photo__wrapper--show');
       modalPhotoContainer.classList.add('modal-photo__container--visible');
     });
   });
@@ -516,25 +554,60 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Добавляем обработчик события click для кнопки закрытия модального окна
-  var closeButton = modal.querySelector('.modal-photo__close-button');
+  const closeButton = modal.querySelector('.modal-photo__close-button');
   closeButton.addEventListener('click', function () {
     document.body.style.overflow = 'auto';
-    modal.classList.remove('modal-photo--show');
+
+    modalPhotoWrapper.classList.remove('modal-photo__wrapper--show');
+    modalPhotoWrapper.classList.add('modal-photo__wrapper--hide');
+    void modalPhotoWrapper.offsetWidth;
+    setTimeout(function () {
+      modalPhotoWrapper.classList.remove('modal-photo__wrapper--hide');
+    }, 200);
+
     modalPhotoContainer.classList.remove('modal-photo__container--visible');
+    modalPhotoContainer.classList.add('modal-photo__container--hide');
+    setTimeout(function () {
+      modalPhotoContainer.classList.remove('modal-photo__container--hide');
+    }, 200);
+
     modalPhotoContainer.classList.remove('modal-photo__container--slide-left-in');
     modalPhotoContainer.classList.remove('modal-photo__container--slide-right-in');
+
+    setTimeout(function () {
+      modal.classList.remove('modal-photo--show');
+    }, 200);
+
     resetArrowButtonVisibility();
   });
+
 
   window.addEventListener('keydown', function (evt) {
     if (evt.key === 'Esc' || evt.key === 'Escape') {
       if (modal.classList.contains('modal-photo--show')) {
         evt.preventDefault();
         document.body.style.overflow = 'auto';
-        modal.classList.remove('modal-photo--show');
+
+        modalPhotoWrapper.classList.remove('modal-photo__wrapper--show');
+        modalPhotoWrapper.classList.add('modal-photo__wrapper--hide');
+        void modalPhotoWrapper.offsetWidth;
+        setTimeout(function () {
+          modalPhotoWrapper.classList.remove('modal-photo__wrapper--hide');
+        }, 200);
+
         modalPhotoContainer.classList.remove('modal-photo__container--visible');
+        modalPhotoContainer.classList.add('modal-photo__container--hide');
+        setTimeout(function () {
+          modalPhotoContainer.classList.remove('modal-photo__container--hide');
+        }, 200);
+
         modalPhotoContainer.classList.remove('modal-photo__container--slide-left-in');
         modalPhotoContainer.classList.remove('modal-photo__container--slide-right-in');
+
+        setTimeout(function () {
+          modal.classList.remove('modal-photo--show');
+        }, 200);
+
         resetArrowButtonVisibility();
       }
     }

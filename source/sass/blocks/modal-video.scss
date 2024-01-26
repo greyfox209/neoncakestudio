@@ -21,9 +21,16 @@
   background: $bg-glass-effect;
   backdrop-filter: blur(16.5px);
   -webkit-backdrop-filter: blur(16.5px);
+}
 
+.modal-video__wrapper--show {
   -webkit-animation: fade-in-fwd 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-fwd 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.modal-video__wrapper--hide {
+  -webkit-animation: fade-out-bck 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: fade-out-bck 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .modal-video__container {
@@ -39,8 +46,13 @@
 }
 
 .modal-video__container--visible {
-  -webkit-animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: scale-in-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.modal-video__container--hide {
+  -webkit-animation: scale-out-center 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: scale-out-center 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .modal-video__cover-video {
