@@ -3,9 +3,10 @@
   padding-left: 16rem;
   padding-right: 16rem;
   background-color: $bg-second;
-  //  box-shadow: $black 0px 10px 40px inset;
 
   box-sizing: border-box;
+
+  box-shadow: inset 0px 0px 60px 60px $black;
 }
 
 .videos__title {

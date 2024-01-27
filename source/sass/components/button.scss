@@ -11,10 +11,11 @@
   cursor: pointer;
 
   box-shadow: $pink 0px 0px 60px;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
+  transform: scale(1.04);
   background-color: $pink;
   color: $white;
   box-shadow: $pink 0px 0px 60px;
