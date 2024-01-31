@@ -21,7 +21,7 @@ const headerObserver = new IntersectionObserver(
     });
   },
   {
-    rootMargin: '-10px'
+    rootMargin: '140px'
   }
 );
 
@@ -203,7 +203,7 @@ headerToggle.addEventListener('click', () => {
 
 // Паралакс эффект секций .intro и .main__content
 
-const ADDITIONALMARGIN = 120;
+const ADDITIONALMARGIN = 280;
 
 const introRef = document.querySelector(".intro");
 const mainContentRef = document.querySelector(".main__content");
@@ -454,26 +454,60 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     // Срабатывает анимация
-    void modalPhotoContainer.offsetWidth; // Это трюк для перезапуска анимации
+    void modalPhotoContainer.offsetWidth;
     modalPhotoContainer.classList.add('modal-photo__container--slide-left-in');
 
     showPreviousSlide();
   });
 
+  window.addEventListener('keydown', function (evt) {
+    if (evt.key === 'ArrowLeft') {
+      evt.preventDefault();
+      if (modal.classList.contains('modal-photo--show')) {
+        modalPhotoContainer.classList.remove(
+          'modal-photo__container--visible',
+          'modal-photo__container--slide-left-in',
+          'modal-photo__container--slide-right-in'
+        );
+
+        void modalPhotoContainer.offsetWidth;
+        modalPhotoContainer.classList.add('modal-photo__container--slide-left-in');
+
+        showPreviousSlide();
+      }
+    }
+  });
+
   // Добавляем обработчик события click для кнопки вправо
   nextButton.addEventListener('click', function () {
-    // Убираем все классы анимаций
     modalPhotoContainer.classList.remove(
       'modal-photo__container--visible',
       'modal-photo__container--slide-left-in',
       'modal-photo__container--slide-right-in'
     );
 
-    // Срабатывает анимация
-    void modalPhotoContainer.offsetWidth; // Это трюк для перезапуска анимации
+    void modalPhotoContainer.offsetWidth;
     modalPhotoContainer.classList.add('modal-photo__container--slide-right-in');
 
     showNextSlide();
+  });
+
+  window.addEventListener('keydown', function (evt) {
+    if (evt.key === 'ArrowRight') {
+      evt.preventDefault();
+      if (modal.classList.contains('modal-photo--show')) {
+        modalPhotoContainer.classList.remove(
+          'modal-photo__container--visible',
+          'modal-photo__container--slide-left-in',
+          'modal-photo__container--slide-right-in'
+        );
+
+        void modalPhotoContainer.offsetWidth;
+        modalPhotoContainer.classList.add('modal-photo__container--slide-right-in');
+
+        showNextSlide();
+      }
+    }
   });
 
   // Функция для отображения предыдущего слайда
