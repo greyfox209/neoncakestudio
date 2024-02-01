@@ -24,12 +24,16 @@
 }
 
 // crhome safari opera
+
 .page::-webkit-scrollbar {
-  display: none;
+  width: 1.6rem;
 }
 
-@media (max-width: $tablet-width) {
-  .page__header {
-    padding-top: 2rem;
-  }
+.page::-webkit-scrollbar-track {
+  background: $black;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: $pink-blue-scrollbar-gradient;
+  border-radius: 4px;
 }
