@@ -103,6 +103,18 @@ videosItems.forEach((videosItem, index) => {
 
         // Остановить наблюдение после первого пересечения
         observer.unobserve(videosItem);
+
+        // Добавляем задержку перед снятием классов
+        setTimeout(() => {
+          videosItem.classList.remove(leftClass);
+          videosItem.classList.remove(rightClass);
+
+          const sibling = videosItems[index % 2 === 0 ? index + 1 : index - 1];
+          if (sibling) {
+            sibling.classList.remove(leftClass);
+            sibling.classList.remove(rightClass);
+          }
+        }, 1000);
       }
     });
   }, observerOptions);
