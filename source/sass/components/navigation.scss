@@ -31,5 +31,10 @@
   opacity: 0.8;
   color: $pink;
   text-shadow: $pink 0px 0px 40px;
+}
 
+@media (max-width: $mobile-width) {
+  .navigation {
+    display: none;
+  }
 }

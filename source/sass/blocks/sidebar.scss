@@ -18,7 +18,7 @@
   -webkit-backdrop-filter: blur(16.5px);
 
   transition: transform 0.4s;
-  transform: translateX(700px);
+  transform: translateX(850px);
 }
 
 .sidebar--opened {
@@ -157,6 +157,19 @@
   }
 
   .sidebar__toggle {
+    top: 3.5rem;
+    right: 2rem;
+
     transform: translateX(0);
+  }
+
+  .sidebar__toggle:hover {
+    top: 3.3rem;
+    right: 1.8rem;
+  }
+
+  .sidebar__toggle:active {
+    top: 3.3rem;
+    right: 1.8rem;
   }
 }

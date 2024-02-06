@@ -9,9 +9,12 @@
   top: 0%;
   left: 0%;
   right: 0%;
-  width: 100%;
+  max-width: 110rem;
   padding-top: 2rem;
-
+  padding-right: 6rem;
+  padding-left: 6rem;
+  margin-inline: auto;
+  box-sizing: border-box;
 
   display: flex;
   justify-content: space-between;
@@ -26,4 +29,24 @@
 
 .header__block--visible {
   transform: translateY(0px);
+}
+
+@media (max-width: $tablet-width) {
+  .header__block {
+    padding-top: 2rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .header__block {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .header__logo {
+    width: 160px;
+  }
 }
