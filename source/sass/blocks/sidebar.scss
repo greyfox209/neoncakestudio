@@ -61,6 +61,10 @@
   text-shadow: $pink 0px 0px 40px;
 }
 
+.sidebar__contacts-list {
+  margin-left: -9px;
+}
+
 .sidebar__toggle {
   position: fixed;
   top: 3rem;
@@ -154,6 +158,22 @@
   .sidebar__wrapper {
     left: 0;
     width: 100%;
+    padding-top: 13rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 5rem;
+
+    box-shadow: none;
+  }
+
+  .sidebar__logo {
+    width: 240px;
+    height: 100px;
+  }
+
+  .sidebar__navigation {
+    gap: 1rem;
+    margin-bottom: 0;
   }
 
   .sidebar__toggle {

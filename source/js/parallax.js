@@ -1,7 +1,7 @@
 // Паралакс эффект секций .intro и .main__content
 
 const initParallax = () => {
-  const ADDITIONALMARGIN = 680;
+  const ADDITIONALMARGIN = 780;
 
   const introRef = document.querySelector(".intro");
   const mainContentRef = document.querySelector(".main__content");
