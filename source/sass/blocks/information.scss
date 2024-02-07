@@ -64,3 +64,39 @@
   -webkit-animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@media (max-width: $tablet-width) {
+  .information__title::before {
+    display: none;
+  }
+
+  .information__text::after {
+    bottom: -5rem;
+    width: 60%;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .information__title {
+    margin-bottom: 3rem;
+    font-size: clamp(3rem, 1rem + 7vw, 6rem);
+    line-height: 1;
+  }
+
+  .information__title::before {
+    top: -4rem;
+  }
+
+  .information__text {
+    position: relative;
+    font-weight: 200;
+    font-size: clamp(1.4rem, 1vw, 2rem);
+    line-height: 1.5;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  .information__text::after {
+    bottom: -4rem;
+  }
+}

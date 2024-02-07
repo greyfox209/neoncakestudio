@@ -40,6 +40,15 @@
 }
 
 @media (max-width: $tablet-width) {
+  .about {
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
+
+  .about__information {
+    margin-bottom: 0;
+  }
+
   .about__image {
     top: 0%;
     left: 0%;
@@ -50,11 +59,10 @@
 @media (max-width: $mobile-width) {
   .about {
     flex-direction: column-reverse;
-    justify-content: space-between;
-    gap: 3rem;
-    padding-right: 6rem;
-    padding-left: 6rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    gap: 5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
 }
