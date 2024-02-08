@@ -1,5 +1,5 @@
 .button {
-  padding: 2rem;
+  padding: 2rem 3rem;
   border: 2px solid $pink;
   border-radius: 10px;
   color: $pink;
@@ -26,4 +26,19 @@
   color: $white;
   box-shadow: $pink 0px 0px 60px;
   opacity: 0.4;
+}
+
+@media (max-width: $tablet-width) {
+  .button {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .button {
+    padding: 2rem;
+    font-size: clamp(1.8rem, 2vw, 2rem);
+
+    box-shadow: $pink 0px 0px 50px;
+  }
 }
