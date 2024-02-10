@@ -54,3 +54,54 @@
   -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@media (max-width: $tablet-width) {
+  .gallery--wrapper {
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-bottom: 8rem;
+    margin-bottom: 0;
+  }
+
+  .gallery__title {
+    margin-bottom: 8rem;
+    font-size: 5rem;
+  }
+
+  .gallery__title::before {
+    left: calc(50% - 320px);
+    width: 200px;
+  }
+
+  .gallery__title::after {
+    left: calc(50% + 120px);
+    width: 200px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .gallery--wrapper {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 8rem;
+  }
+
+  .gallery__title {
+    margin-bottom: 4rem;
+  }
+
+  .gallery__title::before {
+    left: calc(50% - 170px);
+    width: 70px;
+  }
+
+  .gallery__title::after {
+    left: calc(50% + 100px);
+    width: 70px;
+  }
+
+  .gallery__carousel {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+}

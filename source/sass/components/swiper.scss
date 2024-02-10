@@ -39,3 +39,27 @@
 .swiper-pagination-bullet-active {
   background: $pink;
 }
+
+@media (max-width: $tablet-width) {
+  .swiper-slide {
+    width: 30vw;
+    width: 30svw;
+  }
+
+  .swiper-slide img {
+    width: 30vw;
+    width: 30svw;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .swiper-slide {
+    width: 80vw;
+    width: 80svw;
+  }
+
+  .swiper-slide img {
+    width: 80vw;
+    width: 80svw;
+  }
+}

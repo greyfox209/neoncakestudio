@@ -66,13 +66,20 @@
 }
 
 @media (max-width: $tablet-width) {
+  .information__title {
+    margin-bottom: 5rem;
+  }
+
   .information__title::before {
-    display: none;
+    top: -5rem;
+  }
+
+  .information__text {
+    font-size: clamp(1.4rem, 1vw, 2rem);
   }
 
   .information__text::after {
     bottom: -5rem;
-    width: 60%;
   }
 }
 
@@ -84,7 +91,7 @@
   }
 
   .information__title::before {
-    top: -4rem;
+    display: none;
   }
 
   .information__text {
@@ -98,5 +105,6 @@
 
   .information__text::after {
     bottom: -4rem;
+    width: 60%;
   }
 }
