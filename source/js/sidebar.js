@@ -11,6 +11,15 @@ const initSidebar = () => {
     if (header.classList.contains('header__block--visible')) {
       headerToggle.classList.remove('sidebar__toggle--show');
     }
+
+    // Проверить ширину вьюпорта перед блокировкой скролла
+    if (window.innerWidth < 47 * parseFloat(getComputedStyle(document.documentElement).fontSize)) {
+      if (headerModal.classList.contains('sidebar--opened')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
   });
 };
 

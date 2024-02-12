@@ -52,3 +52,44 @@
   -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@media (max-width: $tablet-width) {
+  .cta {
+    height: 65vh;
+    height: 65svh;
+    background-color: $bg-second-low-op;
+
+    box-shadow: inset 0px 0px 40px 40px $black;
+  }
+
+  .cta__text {
+    margin-bottom: 6rem;
+    line-height: 1.2;
+  }
+
+  .cta__button {
+    width: 22rem;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .cta {
+    height: 75vh;
+    height: 75svh;
+    box-shadow: inset 0px 0px 40px 40px $black;
+  }
+
+  .cta--wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .cta__text {
+    margin-bottom: 5rem;
+    font-size: clamp(2rem, 2vw, 3rem);
+  }
+
+  .cta__button {
+    width: 20rem;
+  }
+}

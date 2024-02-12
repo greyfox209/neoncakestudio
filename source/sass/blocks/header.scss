@@ -37,6 +37,11 @@
     padding-right: 6rem;
     padding-left: 6rem;
   }
+
+  .header__logo img {
+    width: 160px;
+    height: 60px;
+  }
 }
 
 @media (max-width: $mobile-width) {
@@ -46,7 +51,7 @@
     padding-left: 2rem;
   }
 
-  .header__logo {
-    width: 160px;
+  .header__logo img {
+    width: 150px;
   }
 }
