@@ -93,3 +93,14 @@
     width: 20rem;
   }
 }
+
+@media (max-height: $mobile-height) {
+  .cta__text {
+    margin-bottom: 4rem;
+    font-size: clamp(2rem, 2vw, 3rem);
+  }
+
+  .cta__button {
+    width: 20rem;
+  }
+}

@@ -133,7 +133,27 @@
   }
 
   .intro__text {
+    padding-left: 5px;
     font-size: clamp(2rem, 1rem + 3vw, 3rem);
+    line-height: 1.2;
+  }
+}
+
+@media (max-height: $mobile-height) {
+  .intro__inner-wrapper {
+    max-width: 560px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .intro__title {
+    margin-bottom: 2rem;
+  }
+
+  .intro__text {
+    padding-left: 5px;
+    font-size: clamp(1.6rem, 1rem + 2vw, 2rem);
     line-height: 1.2;
   }
 }

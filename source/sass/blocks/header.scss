@@ -55,3 +55,9 @@
     width: 150px;
   }
 }
+
+@media (max-height: $mobile-height) {
+  .header__block {
+    display: none;
+  }
+}

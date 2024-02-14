@@ -23,8 +23,13 @@
   position: relative;
 }
 
+.page::-webkit-scrollbar {
+  display: none;
+}
+
 // crhome safari opera
 
+/*
 .page::-webkit-scrollbar {
   width: 1.6rem;
 }
@@ -37,3 +42,4 @@
   background: $pink-blue-scrollbar-gradient;
   border-radius: 4px;
 }
+*/

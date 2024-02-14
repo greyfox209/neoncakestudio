@@ -201,3 +201,28 @@
     right: 2rem;
   }
 }
+
+@media (max-height: $mobile-height) {
+  .modal-video__container {
+    width: 40%;
+  }
+
+  .modal-video__card {
+    padding: 3rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .modal-video__card-title {
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .modal-video__card-text {
+    font-size: clamp(1.4rem, 1vw, 1.8rem);
+  }
+
+  .modal-video__close-button {
+    top: 2.5rem;
+    right: 2rem;
+  }
+}

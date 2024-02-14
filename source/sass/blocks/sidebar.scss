@@ -17,8 +17,8 @@
   backdrop-filter: blur(16.5px);
   -webkit-backdrop-filter: blur(16.5px);
 
-  transition: transform 0.4s;
-  transform: translateX(850px);
+  transition: transform 0.5s;
+  transform: translateX(1100px);
 }
 
 .sidebar--opened {
@@ -158,7 +158,7 @@
   .sidebar__wrapper {
     left: 0;
     width: 100%;
-    padding-top: 13rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
     padding-right: 2rem;
     padding-left: 5rem;
@@ -167,13 +167,55 @@
   }
 
   .sidebar__logo {
-    width: 240px;
-    height: 100px;
+    width: 150px;
+    height: 60px;
   }
 
   .sidebar__navigation {
     gap: 1rem;
     margin-bottom: 0;
+  }
+
+  .sidebar__toggle {
+    top: 2.5rem;
+    right: 2rem;
+
+    transform: translateX(0);
+  }
+
+  .sidebar__toggle:hover {
+    top: 2.3rem;
+    right: 1.8rem;
+  }
+
+  .sidebar__toggle:active {
+    top: 2.3rem;
+    right: 1.8rem;
+  }
+}
+
+@media (max-height: $mobile-height) {
+  .sidebar__wrapper {
+    left: 0;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 5rem;
+
+    box-shadow: none;
+  }
+
+  .sidebar__logo {
+    width: 150px;
+    height: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar__navigation {
+    gap: 0;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
   }
 
   .sidebar__toggle {
