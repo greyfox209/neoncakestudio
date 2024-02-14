@@ -166,3 +166,38 @@
   box-shadow: $pink 0px 0px 30px;
   transition: all 0.1s ease-out;
 }
+
+@media (max-width: $tablet-width) {
+  .modal-video__container {
+    width: 86%;
+  }
+
+  .modal-video__card-text {
+    font-size: clamp(1.4rem, 1.5vw, 1.8rem);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .modal-video__container {
+    width: 94%;
+  }
+
+  .modal-video__card {
+    padding: 3rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .modal-video__card-title {
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .modal-video__card-text {
+    font-size: clamp(1.4rem, 1vw, 1.8rem);
+  }
+
+  .modal-video__close-button {
+    top: 2.5rem;
+    right: 2rem;
+  }
+}
