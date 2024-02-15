@@ -82,42 +82,58 @@ const initVideosItemsObserver = () => {
     rootMargin: '10px'
   };
 
+  const isMobileViewport = window.innerWidth < 640;
+
   videosItems.forEach((videosItem, index) => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const leftClass = 'videos__item-left--visible';
-          const rightClass = 'videos__item-right--visible';
+          const visibleClass = 'videos__item--visible';
 
-          // Четность индекса элемента
-          if (index % 2 === 0) {
-            videosItem.classList.add(leftClass);
-            const sibling = videosItems[index + 1];
-            if (sibling) {
-              sibling.classList.add(rightClass);
-            }
+          // Добавление класса с анимацией только для текущего элемента
+          if (isMobileViewport) {
+            videosItem.classList.add(visibleClass);
+
+            observer.unobserve(videosItem);
+
+            // Удаление класса после завершения анимации
+            videosItem.addEventListener('animationend', () => {
+              videosItem.classList.remove(visibleClass);
+            }, { once: true });
           } else {
-            videosItem.classList.add(rightClass);
-            const sibling = videosItems[index - 1];
-            if (sibling) {
-              sibling.classList.add(leftClass);
+            const leftClass = 'videos__item-left--visible';
+            const rightClass = 'videos__item-right--visible';
+
+            // Четность индекса элемента
+            if (index % 2 === 0) {
+              videosItem.classList.add(leftClass);
+              const sibling = videosItems[index + 1];
+              if (sibling) {
+                sibling.classList.add(rightClass);
+              }
+            } else {
+              videosItem.classList.add(rightClass);
+              const sibling = videosItems[index - 1];
+              if (sibling) {
+                sibling.classList.add(leftClass);
+              }
             }
+
+            // Остановить наблюдение после первого пересечения
+            observer.unobserve(videosItem);
+
+            // Задержка перед снятием классов
+            setTimeout(() => {
+              videosItem.classList.remove(leftClass);
+              videosItem.classList.remove(rightClass);
+
+              const sibling = videosItems[index % 2 === 0 ? index + 1 : index - 1];
+              if (sibling) {
+                sibling.classList.remove(leftClass);
+                sibling.classList.remove(rightClass);
+              }
+            }, 1000);
           }
-
-          // Остановить наблюдение после первого пересечения
-          observer.unobserve(videosItem);
-
-          // Задержка перед снятием классов
-          setTimeout(() => {
-            videosItem.classList.remove(leftClass);
-            videosItem.classList.remove(rightClass);
-
-            const sibling = videosItems[index % 2 === 0 ? index + 1 : index - 1];
-            if (sibling) {
-              sibling.classList.remove(leftClass);
-              sibling.classList.remove(rightClass);
-            }
-          }, 1000);
         }
       });
     }, observerOptions);

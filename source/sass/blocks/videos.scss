@@ -169,6 +169,11 @@
   animation: fade-in-br 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
+.videos__item--visible {
+  -webkit-animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
 .videos__cta--visible {
   -webkit-animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;

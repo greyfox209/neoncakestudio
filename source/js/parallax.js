@@ -1,9 +1,16 @@
 // Паралакс эффект секций .intro и .main__content
 
 const initParallax = () => {
-  const ADDITIONALMARGIN = 780;
-
+  let ADDITIONALMARGIN;
   const introRef = document.querySelector(".intro");
+  const viewportHeight = window.innerHeight;
+
+  if (viewportHeight < 1088) {
+    ADDITIONALMARGIN = 240;
+  } else {
+    ADDITIONALMARGIN = 240;
+  }
+
   const mainContentRef = document.querySelector(".main__content");
   const layerRefs = document.querySelectorAll(".layer");
 
